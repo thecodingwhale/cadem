@@ -1,0 +1,16 @@
+default:
+  suites:
+    user_auth:
+      contexts: [ UserAuthenticationContext ]
+      filters: { tags: '@user_auth' }
+
+  extensions:
+    Laracasts\Behat:
+        # env_path: .env.behat
+    Behat\MinkExtension:
+        base_url: https://codeship-behat.dev
+        default_session: laravel
+        laravel: ~
+        selenium2:
+          wd_host: "http://192.168.10.1:4444/wd/hub"
+        browser_name: chrome
