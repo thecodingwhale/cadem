@@ -6,7 +6,7 @@
 `vendor/bin/behat --suite [@tag_name] --append-snippets`
 `vendor/bin/behat --suite user_registration`
 
-## Todo
+## Current Development Issues
 
 ## License
 Cadem is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
