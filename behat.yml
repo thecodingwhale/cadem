@@ -3,6 +3,9 @@ default:
     user_auth:
       contexts: [ UserAuthenticationContext ]
       filters: { tags: '@user_auth' }
+    user_registration:
+      contexts: [ UserRegistrationContext ]
+      filters: { tags: '@user_registration' }
 
   extensions:
     Laracasts\Behat:

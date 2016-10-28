@@ -34,7 +34,7 @@ class UserAuthenticationContext extends MinkContext implements Context, SnippetA
     public function iFillInTheFormWithMyUsernameAndPasswordAndSubmitTheForm()
     {
         $this->fillField('email', 'aldren.terante@gmail.com');
-        $this->fillField('password', 'd2tnu6ug9dtg');
+        $this->fillField('password', 'secret');
         $this->pressButton('Login');
     }
 }
