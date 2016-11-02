@@ -12,7 +12,7 @@ use Behat\MinkExtension\Context\MinkContext;
 /**
  * Defines application features from the specific context.
  */
-class UserAuthenticationContext extends MinkContext implements Context, SnippetAcceptingContext
+class SettingsProfileContext extends MinkContext implements Context, SnippetAcceptingContext
 {
 
     /**
@@ -24,32 +24,28 @@ class UserAuthenticationContext extends MinkContext implements Context, SnippetA
      */
     public function __construct()
     {
+
     }
 
+
+
     /**
-     * @Given I visit the login page
+     * @Given I visit the login page and fill up the form.
      */
-    public function iVisitTheLoginPage()
+    public function iVisitTheLoginPageAndFillUpTheForm()
     {
         $this->visit('login');
-    }
-
-    /**
-     * @Given I fill in the form with my username and password and submit the form
-     */
-    public function iFillInTheFormWithMyUsernameAndPasswordAndSubmitTheForm()
-    {
         $this->fillField('email', 'aldren.terante@gmail.com');
         $this->fillField('password', 'secret');
         $this->pressButton('Login');
     }
 
-
     /**
-     * @Given I visit the settings profile page
+     * @Given visit the settings profile page.
      */
-    public function iVisitTheSettingsProfilePage()
+    public function visitTheSettingsProfilePage()
     {
         $this->visit('settings/profile');
     }
+
 }

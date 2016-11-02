@@ -6,6 +6,9 @@ default:
     user_registration:
       contexts: [ UserRegistrationContext ]
       filters: { tags: '@user_registration' }
+    settings_profile:
+      contexts: [ SettingsProfileContext ]
+      filters: { tags: '@settings_profile' }
 
   extensions:
     Laracasts\Behat:
