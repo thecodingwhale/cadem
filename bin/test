@@ -1,3 +1,4 @@
 #!/bin/bash
 
-php artisan migrate:refresh --seed --env=acceptance && vendor/bin/behat
+php artisan migrate:refresh --seed --env=acceptance
+vendor/bin/behat

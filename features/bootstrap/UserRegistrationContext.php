@@ -14,6 +14,7 @@ use Behat\MinkExtension\Context\MinkContext;
  */
 class UserRegistrationContext extends MinkContext implements Context, SnippetAcceptingContext
 {
+
     /**
      * Initializes context.
      *
@@ -26,7 +27,6 @@ class UserRegistrationContext extends MinkContext implements Context, SnippetAcc
 
     }
 
-
     /**
      * @Given I visit the registration page
      */
@@ -34,16 +34,26 @@ class UserRegistrationContext extends MinkContext implements Context, SnippetAcc
     {
         $this->visit('register');
     }
-
     /**
-     * @Given I fill in the form with my name :arg1, email, password, confimation password and submit the form
+     * @Given I fill all the form fields
      */
-    public function iFillInTheFormWithMyNameEmailPasswordConfimationPasswordAndSubmitTheForm($arg1)
+    public function iFillAllTheFormFields()
     {
-        $this->fillField('name', $arg1);
+        $this->fillField('name', 'John Doe');
+        $this->fillField('school_name', 'Oxford University');
         $this->fillField('email', 'john.doe@gmail.com');
         $this->fillField('password', 'secret');
         $this->fillField('password_confirmation', 'secret');
         $this->pressButton('Register');
     }
+
+    /**
+     * @Then I should see my registration name and school name
+     */
+    public function iShouldSeeMyRegistrationNameAndSchoolName()
+    {
+        $this->assertPageContainsText('John Doe');
+        $this->assertPageContainsText('Oxford University');
+    }
+
 }

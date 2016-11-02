@@ -6,5 +6,5 @@ Feature: User Registration Are
   @happy_path @user_registration @javascript
   Scenario: Registration with Success
     Given I visit the registration page
-    And I fill in the form with my name "John Doe", email, password, confimation password and submit the form
-    Then I should see "John Doe"
+    And I fill all the form fields
+    Then I should see my registration name and school name

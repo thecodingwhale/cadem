@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
+use App\School;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // $school = School::where('user_id', 2)->first();
+
+        return view('home', [
+            'schoolName' => 'Oxford University'
+        ]);
     }
 }
