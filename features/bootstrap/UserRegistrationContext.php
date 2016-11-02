@@ -8,17 +8,12 @@ use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Behat\Mink\Driver\Selenium2Driver;
 use Behat\MinkExtension\Context\MinkContext;
-use Laracasts\Behat\Context\DatabaseTransactions;
-use Laracasts\Behat\Context\Migrator;
-use Illuminate\Http\Request;
+
 /**
  * Defines application features from the specific context.
  */
 class UserRegistrationContext extends MinkContext implements Context, SnippetAcceptingContext
 {
-    use Migrator;
-    use DatabaseTransactions;
-
     /**
      * Initializes context.
      *
@@ -31,22 +26,6 @@ class UserRegistrationContext extends MinkContext implements Context, SnippetAcc
 
     }
 
-    /**
-     * @BeforeScenario
-     */
-    public function beforeScenario()
-    {
-        Artisan::call('migrate:refresh');
-        // Artisan::call('db:seed');
-    }
-
-    // /**
-    //  * @AfterScenario
-    //  */
-    // public function afterScenario()
-    // {
-    //     Artisan::call('migrate:refresh');
-    // }
 
     /**
      * @Given I visit the registration page
