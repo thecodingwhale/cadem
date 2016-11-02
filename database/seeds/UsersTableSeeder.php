@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Role;
+use App\Permission;
 
 class UsersTableSeeder extends Seeder
 {
@@ -11,10 +13,19 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class, 1)->create([
+        $user = factory(App\User::class, 1)->create([
             'name' => 'Aldren Terante',
             'email' => 'aldren.terante@gmail.com',
             'password' => bcrypt('secret')
         ]);
+
+        $user->assignRole(Role::SUPERADMIN);
+        $user->givePermissionTo(Permission::ALL);
+
+        factory(App\School::class, 1)->create([
+            'name' => 'College of Industrial Arts',
+            'user_id' => $user->id
+        ]);
+
     }
 }

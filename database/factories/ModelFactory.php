@@ -22,3 +22,10 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\School::class, function (Faker\Generator $faker) {
+    return [
+        'name' => 'College of' . $faker->company,
+        'user_id' => 1
+    ];
+});

@@ -55,5 +55,4 @@ class UserRegistrationContext extends MinkContext implements Context, SnippetAcc
         $this->assertPageContainsText('John Doe');
         $this->assertPageContainsText('Oxford University');
     }
-
 }

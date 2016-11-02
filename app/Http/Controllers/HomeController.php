@@ -25,10 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $school = School::where('user_id', 2)->first();
+        $userId = Auth::user()->id;
+        $school = School::where('user_id', $userId)->first();
 
         return view('home', [
-            'schoolName' => 'Oxford University'
+            'schoolName' => $school->name
         ]);
     }
 }
