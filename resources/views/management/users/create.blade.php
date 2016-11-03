@@ -1,88 +1,70 @@
-@extends('layouts.app')
+@extends('layouts.sidebar-left')
 
-@section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Management</div>
-                    <div class="panel-body">
-                        <div class="list-group">
-                            <a href="#" class="list-group-item active">
-                                Users
-                            </a>
-                        </div>
+@section('main')
+    <div class="panel panel-default">
+        <div class="panel-heading">Add user</div>
+        <div class="panel-body">
+            <p>
+                <a href="{{ url('management/users') }}" class="btn btn-default">
+                    Back
+                </a>
+            </p>
+            <form class="form-horizontal" role="form" method="POST" action="{{ url('/management/users/store') }}" novalidate>
+                {{ csrf_field() }}
+                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    <label for="name" class="col-md-4 control-label">Name</label>
+
+                    <div class="col-md-6">
+                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+
+                        @if ($errors->has('name'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('name') }}</strong>
+                            </span>
+                        @endif
                     </div>
                 </div>
-            </div>
-            <div class="col-md-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Add user</div>
-                    <div class="panel-body">
-                        <p>
-                            <a href="{{ url('management/users') }}" class="btn btn-default">
-                                Back
-                            </a>
-                        </p>
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/management/users/store') }}" novalidate>
-                            {{ csrf_field() }}
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Name</label>
 
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                                    @if ($errors->has('name'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
+                    <div class="col-md-6">
+                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                    @if ($errors->has('email'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
-                                <label for="role" class="col-md-4 control-label">Role</label>
-                                <div class="col-md-6">
-                                    @foreach ($roles as $role)
-                                        <div class="radio">
-                                          <label>
-                                            <input name="role" type="radio" value="{{ $role['value'] }}">
-                                            {{ $role['name'] }}
-                                          </label>
-                                        </div>
-                                    @endforeach
-                                    @if ($errors->has('role'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('role') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Create
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
                     </div>
                 </div>
-            </div>
+
+                <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
+                    <label for="role" class="col-md-4 control-label">Role</label>
+                    <div class="col-md-6">
+                        @foreach ($roles as $role)
+                            <div class="radio">
+                              <label>
+                                <input name="role" type="radio" value="{{ $role['value'] }}">
+                                {{ $role['name'] }}
+                              </label>
+                            </div>
+                        @endforeach
+                        @if ($errors->has('role'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('role') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-4">
+                        <button type="submit" class="btn btn-primary">
+                            Create
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 @endsection
