@@ -18,6 +18,18 @@ class DefaultRolePermissionSeeder extends Seeder
         SpatieRole::create([
             'name' => Role::SUPERADMIN
         ]);
+        SpatieRole::create([
+            'name' => Role::ADMIN
+        ]);
+        SpatieRole::create([
+            'name' => Role::STUDENT
+        ]);
+        SpatieRole::create([
+            'name' => Role::TEACHER
+        ]);
+        SpatieRole::create([
+            'name' => Role::GUARDIAN
+        ]);
 
         SpatiePermission::create([
             'name' => Permission::ALL

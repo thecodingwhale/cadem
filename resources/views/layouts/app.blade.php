@@ -65,6 +65,11 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <a href="{{ url('/management/users') }}">
+                                            Management
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -82,7 +87,13 @@
                 </div>
             </div>
         </nav>
-
+        @if (session('status'))
+            <div class="container">
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            </div>
+        @endif
         @yield('content')
     </div>
 
