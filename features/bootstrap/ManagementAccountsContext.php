@@ -12,7 +12,7 @@ use Behat\MinkExtension\Context\MinkContext;
 /**
  * Defines application features from the specific context.
  */
-class ManagementUsersContext extends MinkContext implements Context, SnippetAcceptingContext
+class ManagementAccountsContext extends MinkContext implements Context, SnippetAcceptingContext
 {
     /**
      * Initializes context.
@@ -43,7 +43,7 @@ class ManagementUsersContext extends MinkContext implements Context, SnippetAcce
      */
     public function visitTheManagementUsersPage()
     {
-        $this->visit('management/users');
+        $this->visit('management/accounts');
     }
 
     /**
@@ -51,7 +51,7 @@ class ManagementUsersContext extends MinkContext implements Context, SnippetAcce
      */
     public function whenIPressTheAddUsersButton()
     {
-        $this->clickLink('Add user');
+        $this->clickLink('Add account');
     }
 
     /**
@@ -59,7 +59,7 @@ class ManagementUsersContext extends MinkContext implements Context, SnippetAcce
      */
     public function visitTheManagementUsersCreatePage()
     {
-        $this->visit('management/users/create');
+        $this->visit('management/accounts/create');
     }
 
     /**

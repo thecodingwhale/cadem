@@ -73,10 +73,15 @@ class RegisterController extends Controller
 
         $user->assignRole(Role::SUPERADMIN);
 
-        School::create([
+        $school = School::create([
             'name' => $data['school_name'],
             'user_id' => $user->id
         ]);
+
+        $user->schools()->attach([
+            $school->id
+        ]);
+
 
         return $user;
     }

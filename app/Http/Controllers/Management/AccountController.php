@@ -7,22 +7,27 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateUserFormRequest;
 use App\Role;
 use App\User;
-use Faker\Generator;
+use App\School;
+use Auth;
 
-class UserController extends Controller
+class AccountController extends Controller
 {
+
     public function index()
     {
         $users = [];
-        foreach (User::get() as $user) {
-            $role = $user->roles()->pluck('name')->first();
-            $users[] = [
-                'name' => $user->name,
-                'email' => $user->email,
-                'role' => $role
-            ];
+        $schools = School::with('users')->where('user_id', Auth::user()->school->user_id)->get();
+        foreach ($schools as $school) {
+            foreach ($school->users as $user) {
+                $users[] = [
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'role' => $user->roles()->pluck('name')->first(),
+                    'school' => isset($user->school) ? $user->school->name : ''
+                ];
+            }
         }
-        return view('management.users.index', [
+        return view('management.accounts.index', [
             'users' => $users
         ]);
     }
@@ -37,7 +42,7 @@ class UserController extends Controller
                 'value' => $key
             ];
         }
-        return view('management.users.create', [
+        return view('management.accounts.create', [
             'roles' => $options
         ]);
     }
@@ -50,6 +55,7 @@ class UserController extends Controller
             ['password' => bcrypt('secret')]
         ));
         $user->assignRole($role);
+        $output = $user->schools()->sync([Auth::user()->school->id], false);
         return back()->with('status', 'User successfully added.');
     }
 

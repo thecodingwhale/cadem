@@ -21,7 +21,8 @@
         "behat/behat": "^3.1",
         "behat/mink": "^1.7",
         "behat/mink-extension": "^2.2",
-        "laracasts/behat-laravel-extension": "^1.0"
+        "laracasts/behat-laravel-extension": "^1.0",
+        "laracasts/generators": "^1.1"
     },
     "autoload": {
         "classmap": [

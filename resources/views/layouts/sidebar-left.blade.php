@@ -18,8 +18,11 @@
                     <div class="panel-heading">Management</div>
                     <div class="panel-body">
                         <div class="list-group">
-                            <a href="{{ url('management/users') }}" class="list-group-item">
-                                Users
+                            <a href="{{ url('management/accounts') }}" class="list-group-item">
+                                Accounts
+                            </a>
+                            <a href="{{ url('management/schools') }}" class="list-group-item">
+                                Schools
                             </a>
                         </div>
                     </div>

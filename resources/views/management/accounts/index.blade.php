@@ -2,10 +2,10 @@
 
 @section('main')
     <div class="panel panel-default">
-        <div class="panel-heading">Users</div>
+        <div class="panel-heading">Accounts</div>
         <div class="panel-body">
             <p>
-                <a href="{{ url('/management/users/create') }}" class="btn btn-primary">
+                <a href="{{ url('/management/accounts/create') }}" class="btn btn-primary">
                     Add user
                 </a>
             </p>
@@ -15,6 +15,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Role</th>
+                        <th>School</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,7 @@
                             <td>{{ $user['name'] }}</td>
                             <td>{{ $user['email'] }}</td>
                             <td>{{ $user['role'] }}</td>
+                            <td>{{ $user['school'] }}</td>
                         </tr>
                     @endforeach
                 </tbody>

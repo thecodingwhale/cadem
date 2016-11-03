@@ -18,14 +18,13 @@ class UsersTableSeeder extends Seeder
             'email' => 'aldren.terante@gmail.com',
             'password' => bcrypt('secret')
         ]);
-
         $user->assignRole(Role::SUPERADMIN);
         $user->givePermissionTo(Permission::ALL);
 
-        factory(App\School::class, 1)->create([
-            'name' => 'College of Industrial Arts',
-            'user_id' => $user->id
+        $userId = $user->id;
+        $school = factory(App\School::class, 1)->create([
+            'name' => 'College of Industrial Arts'
         ]);
-
+        $user->schools()->attach($school->id);
     }
 }

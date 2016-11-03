@@ -7,7 +7,7 @@ default:
       contexts: [ UserRegistrationContext ]
       filters: { tags: '@user_registration' }
     management_users:
-      contexts: [ ManagementUsersContext ]
+      contexts: [ ManagementAccountsContext ]
       filters: { tags: '@management_users' }
 
   extensions:

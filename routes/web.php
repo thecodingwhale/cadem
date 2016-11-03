@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/settings/profile', 'SettingsController@profile');
-Route::get('/management/users', 'Management\UserController@index');
-Route::get('/management/users/create', 'Management\UserController@create');
-Route::post('/management/users/store', 'Management\UserController@store');
+Route::get('/management/accounts', 'Management\AccountController@index');
+Route::get('/management/accounts/create', 'Management\AccountController@create');
+Route::post('/management/accounts/store', 'Management\AccountController@store');
+Route::get('/management/schools', 'Management\SchoolController@index');

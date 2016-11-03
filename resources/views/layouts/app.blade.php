@@ -65,7 +65,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('/management/users') }}">
+                                        <a href="{{ url('/management/accounts') }}">
                                             Management
                                         </a>
                                     </li>

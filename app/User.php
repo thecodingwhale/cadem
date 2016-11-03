@@ -34,6 +34,14 @@ class User extends Authenticatable
      */
     public function schools()
     {
-        return $this->hasMany('App\School');
+        return $this->belongsToMany('App\School', 'school_user');
+    }
+
+    /**
+     * Get the schools for the user.
+     */
+    public function school()
+    {
+        return $this->hasOne('App\School');
     }
 }
