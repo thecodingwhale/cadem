@@ -20,11 +20,19 @@ class UsersTableSeeder extends Seeder
         ]);
         $user->assignRole(Role::SUPERADMIN);
         $user->givePermissionTo(Permission::ALL);
-
         $userId = $user->id;
-        $school = factory(App\School::class, 1)->create([
-            'name' => 'College of Industrial Arts'
+        $schoolFirst = factory(App\School::class, 1)->create([
+            'name' => 'Technological University of the Philippines - Manila',
+            'user_id' => $userId
         ]);
-        $user->schools()->attach($school->id);
+        $schoolFirstId = $schoolFirst->id;
+        $schoolSecond = factory(App\School::class, 1)->create([
+            'name' => 'Technological University of the Philippines - Cavite',
+            'user_id' => $userId
+        ]);
+        $schoolSecondId = $schoolSecond->id;
+        $user->schools()->attach([
+            $schoolFirstId
+        ]);
     }
 }

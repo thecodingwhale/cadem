@@ -12,7 +12,6 @@ use Auth;
 
 class AccountController extends Controller
 {
-
     public function index()
     {
         $users = [];
@@ -23,7 +22,7 @@ class AccountController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'role' => $user->roles()->pluck('name')->first(),
-                    'school' => isset($user->school) ? $user->school->name : ''
+                    'school' => School::find($user->pivot->school_id)->name
                 ];
             }
         }
@@ -34,28 +33,42 @@ class AccountController extends Controller
 
     public function create()
     {
+        $userId = Auth::user()->school->user_id;
         $roles = Role::getConstants();
-        $options = [];
+        $schools = School::where('user_id', $userId)->get();
+
+        $roleOptions = [];
         foreach ($roles as $key => $value) {
-            $options[] = [
+            $roleOptions[] = [
                 'name' => $value,
                 'value' => $key
             ];
         }
+
+        $schoolOptions = [];
+        foreach ($schools as $school) {
+            $schoolOptions[] = [
+                'name' => $school->name,
+                'value' => $school->id
+            ];
+        }
+
         return view('management.accounts.create', [
-            'roles' => $options
+            'roles' => $roleOptions,
+            'schools' => $schoolOptions
         ]);
     }
 
     public function store(CreateUserFormRequest $request)
     {
         $role = $request->input('role');
+        $school = $request->input('school');
         $user = User::create(array_merge(
             $request->all(),
             ['password' => bcrypt('secret')]
         ));
         $user->assignRole($role);
-        $output = $user->schools()->sync([Auth::user()->school->id], false);
+        $user->schools()->attach($school);
         return back()->with('status', 'User successfully added.');
     }
 
