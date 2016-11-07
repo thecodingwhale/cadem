@@ -3,7 +3,7 @@ Feature: User Login Area
   As an authenticated user
   So they can update their profile settings
 
-  @happy_path @settings_profile @javascript
+  @happy_path @settings_profile
   Scenario: Check the current profile settings
     Given I visit the login page and fill up the form.
     And visit the settings profile page.
