@@ -16,6 +16,7 @@
                         <th>Email</th>
                         <th>Role</th>
                         <th>School</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,6 +26,11 @@
                             <td>{{ $user['email'] }}</td>
                             <td>{{ $user['role'] }}</td>
                             <td>{{ $user['school'] }}</td>
+                            <td>
+                                <a href="{{ $user['details_path'] }}" class="btn btn-xs btn-default">
+                                    View
+                                </a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

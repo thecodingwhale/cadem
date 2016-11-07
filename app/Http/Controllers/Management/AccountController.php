@@ -22,7 +22,8 @@ class AccountController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'role' => $user->roles()->pluck('name')->first(),
-                    'school' => School::find($user->pivot->school_id)->name
+                    'school' => School::find($user->pivot->school_id)->name,
+                    'details_path' => url('/management/accounts') . '/' . $user->id . '/' . 'detail'
                 ];
             }
         }
@@ -72,4 +73,18 @@ class AccountController extends Controller
         return back()->with('status', 'User successfully added.');
     }
 
+    public function accountDetail($userId) {
+        $user = User::with('schools')->find($userId);
+        if (!$user) {
+            return back()->with('error', 'User id invalid.');
+        }
+        return view('management.accounts.account.index', [
+            'accountDetail' => [
+                'name' => $user->name,
+                'email' => $user->email,
+                'role' => $user->getRole(),
+                'school' => $user->schools->first()->name
+            ]
+        ]);
+    }
 }

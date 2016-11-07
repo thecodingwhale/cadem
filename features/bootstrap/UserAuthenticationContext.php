@@ -28,6 +28,7 @@ class UserAuthenticationContext extends MinkContext implements Context, SnippetA
      */
     public function __construct()
     {
+        echo env('APP_ENV');
     }
 
     /**

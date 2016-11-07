@@ -44,4 +44,12 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\School');
     }
+
+    /**
+    * Get the role name of the user
+    */
+    public function getRole()
+    {
+        return $this->roles()->pluck('name')->first();
+    }
 }

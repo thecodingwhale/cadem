@@ -94,4 +94,13 @@ class ManagementAccountsContext extends MinkContext implements Context, SnippetA
         $this->selectOption('school', '1');
         $this->pressButton('Create');
     }
+
+    /**
+     * @Given visit a existing account page
+     */
+    public function visitAExistingAccountPage()
+    {
+        $this->visit('management/accounts/1/detail');
+    }
+
 }
