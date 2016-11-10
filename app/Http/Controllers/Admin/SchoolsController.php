@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminSchoolsCreateUpdateFormRequest;
 
 use App\School;
 use Illuminate\Http\Request;
@@ -40,11 +41,11 @@ class SchoolsController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(AdminSchoolsCreateUpdateFormRequest $request)
     {
-        
+
         $requestData = $request->all();
-        
+
         School::create($requestData);
 
         Session::flash('flash_message', 'School added!');
@@ -88,11 +89,11 @@ class SchoolsController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update($id, Request $request)
+    public function update($id, AdminSchoolsCreateUpdateFormRequest $request)
     {
-        
+
         $requestData = $request->all();
-        
+
         $school = School::findOrFail($id);
         $school->update($requestData);
 
