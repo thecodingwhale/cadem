@@ -4,9 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8f38f7b6cd796a245c7b512f7877ced2",
-    "content-hash": "541f4481ca233f96d9f025c5585a1402",
+    "hash": "62f93ea410b6fee4bf1c7825862bda3e",
+    "content-hash": "84a313dd53a7612413a0205d5b39cd48",
     "packages": [
+        {
+            "name": "appzcoder/crud-generator",
+            "version": "v1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/appzcoder/crud-generator.git",
+                "reference": "ab6805c276ab79d139dda24dcf58802b50fd00ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/appzcoder/crud-generator/zipball/ab6805c276ab79d139dda24dcf58802b50fd00ae",
+                "reference": "ab6805c276ab79d139dda24dcf58802b50fd00ae",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.1",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Appzcoder\\CrudGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sohel Amin",
+                    "email": "sohelamincse@gmail.com",
+                    "homepage": "http://www.appzcoder.com"
+                }
+            ],
+            "description": "Laravel 5 CRUD Generator",
+            "keywords": [
+                "crud",
+                "crud generator",
+                "laravel",
+                "laravel crud generator"
+            ],
+            "time": "2016-09-28 18:05:53"
+        },
         {
             "name": "barryvdh/laravel-cors",
             "version": "v0.8.2",
