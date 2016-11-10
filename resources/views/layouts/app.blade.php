@@ -82,17 +82,17 @@
                 </div>
             </div>
         </nav>
-        @if (session('status'))
+        @if (session('flash_status_message'))
             <div class="container">
                 <div class="alert alert-success">
-                    {{ session('status') }}
+                    {{ session('flash_status_message') }}
                 </div>
             </div>
         @endif
-        @if (session('error'))
+        @if (session('flash_error_message'))
             <div class="container">
                 <div class="alert alert-danger">
-                    {{ session('error') }}
+                    {{ session('flash_error_message') }}
                 </div>
             </div>
         @endif

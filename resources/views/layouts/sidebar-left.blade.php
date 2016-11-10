@@ -14,6 +14,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Management</div>
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <a href="{{ url('admin/users') }}" class="list-group-item">
+                                Users
+                            </a>
+                            <a href="{{ url('admin/schools') }}" class="list-group-item">
+                                Schools
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-9">
                 @yield('main')
