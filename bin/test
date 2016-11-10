@@ -1,3 +1,5 @@
 #!/bin/bash
-php artisan migrate:refresh --seed
-vendor/bin/behat
+php artisan migrate:refresh --seed && vendor/bin/behat --suite user_auth
+php artisan migrate:refresh --seed && vendor/bin/behat --suite user_registration
+php artisan migrate:refresh --seed && vendor/bin/behat --suite settings_profile
+php artisan migrate:refresh --seed && vendor/bin/behat --suite management_users

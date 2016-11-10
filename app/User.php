@@ -46,6 +46,23 @@ class User extends Authenticatable
     }
 
     /**
+     * Get the schools for the user.
+     */
+    public function subjects()
+    {
+        return $this->belongsToMany('App\Subject', 'subject_user');
+    }
+
+
+    /**
+     * Get the subject details created.
+     */
+    public function subject()
+    {
+        return $this->hasOne('App\Subject');
+    }
+
+    /**
     * Get the role name of the user
     */
     public function getRole()

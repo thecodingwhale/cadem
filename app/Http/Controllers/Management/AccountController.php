@@ -22,8 +22,7 @@ class AccountController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'role' => $user->roles()->pluck('name')->first(),
-                    'school' => School::find($user->pivot->school_id)->name,
-                    'details_path' => url('/management/accounts') . '/' . $user->id . '/' . 'detail'
+                    'details_path' => url('/management/accounts') . '/' . $user->id . '/' . 'details'
                 ];
             }
         }
@@ -73,18 +72,39 @@ class AccountController extends Controller
         return back()->with('status', 'User successfully added.');
     }
 
-    public function accountDetail($userId) {
+    public function accountDetails($userId) {
         $user = User::with('schools')->find($userId);
+        $subjects = [];
+
         if (!$user) {
             return back()->with('error', 'User id invalid.');
         }
+
+        if ($user->getRole() == \App\Role::STUDENT) {
+            $subjects = [
+                [
+                    'id' => 1,
+                    'name' => 'Math',
+                    'teacher' => 'John Doe',
+                    'grades_path' => url('/management/grades') . '/' . $user->id
+                ],
+                [
+                    'id' => 2,
+                    'name' => 'Science',
+                    'teacher' => 'Hillary Cliff',
+                    'grades_path' => url('/management/grades') . '/' . $user->id
+                ]
+            ];
+        }
+
         return view('management.accounts.account.index', [
             'accountDetail' => [
                 'name' => $user->name,
                 'email' => $user->email,
                 'role' => $user->getRole(),
                 'school' => $user->schools->first()->name
-            ]
+            ],
+            'subjects' => $subjects
         ]);
     }
 }

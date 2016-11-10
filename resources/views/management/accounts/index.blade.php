@@ -15,7 +15,6 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Role</th>
-                        <th>School</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -25,7 +24,6 @@
                             <td>{{ $user['name'] }}</td>
                             <td>{{ $user['email'] }}</td>
                             <td>{{ $user['role'] }}</td>
-                            <td>{{ $user['school'] }}</td>
                             <td>
                                 <a href="{{ $user['details_path'] }}" class="btn btn-xs btn-default">
                                     View

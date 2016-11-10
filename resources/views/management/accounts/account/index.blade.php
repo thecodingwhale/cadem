@@ -1,38 +1,73 @@
 @extends('layouts.sidebar-left')
 
 @section('main')
+    <p>
+        <a href="{{ url('management/accounts') }}" class="btn btn-default">
+            Back
+        </a>
+    </p>
     <div class="panel panel-default">
         <div class="panel-heading">Account Details</div>
         <div class="panel-body">
             <p>
-                <a href="{{ url('management/accounts') }}" class="btn btn-default">
-                    Back
-                </a>
-            </p>
-            <p>
                 <strong>Name:</strong><br/>
-                <div class="account-detail-name">
+                <span class="account-detail-name">
                     {{ $accountDetail['name'] }}
-                </div>
+                </span>
             </p>
             <p>
                 <strong>Email:</strong><br/>
-                <div class="account-detail-email">
+                <span class="account-detail-email">
                     {{ $accountDetail['email'] }}
-                </div>
+                </span>
             </p>
             <p>
                 <strong>Role:</strong><br/>
-                <div class="account-detail-role">
+                <span class="account-detail-role">
                     {{ $accountDetail['role'] }}
-                </div>
+                </span>
             </p>
             <p>
                 <strong>School:</strong><br/>
-                <div class="account-detail-school">
+                <span class="account-detail-school">
                     {{ $accountDetail['school'] }}
-                </div>
+                </span>
             </p>
         </div>
     </div>
+    @if ($accountDetail['role'] == \App\Role::STUDENT)
+    <div class="panel panel-default">
+        <div class="panel-heading">Subjects</div>
+        <div class="panel-body">
+            @if(count($subjects) == 0)
+                <div class="alert alert-info">
+                    No available subjects
+                </div>
+            @else
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Teacher</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            @foreach($subjects as $subject)
+                                <tr>
+                                    <td>{{ $subject['name'] }}</td>
+                                    <td>{{ $subject['teacher'] }}</td>
+                                    <td>
+                                        <a href="{{ $subject['grades_path'] }}" class="btn btn-xs btn-default">
+                                            View
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                    </tbody>
+                </table>
+            @endif
+        <div>
+    </div>
+    @endif
 @endsection

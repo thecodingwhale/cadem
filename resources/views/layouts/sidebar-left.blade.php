@@ -24,6 +24,9 @@
                             <a href="{{ url('management/schools') }}" class="list-group-item">
                                 Schools
                             </a>
+                            <a href="{{ url('management/subjects') }}" class="list-group-item">
+                                Subjects
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -1,14 +1,14 @@
 @extends('layouts.sidebar-left')
 
 @section('main')
+    <p>
+        <a href="{{ url('management/accounts') }}" class="btn btn-default">
+            Back
+        </a>
+    </p>
     <div class="panel panel-default">
         <div class="panel-heading">Add account</div>
         <div class="panel-body">
-            <p>
-                <a href="{{ url('management/accounts') }}" class="btn btn-default">
-                    Back
-                </a>
-            </p>
             <form class="form-horizontal" role="form" method="POST" action="{{ url('/management/accounts/store') }}" novalidate>
                 {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
