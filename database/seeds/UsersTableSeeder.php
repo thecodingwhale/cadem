@@ -20,13 +20,5 @@ class UsersTableSeeder extends Seeder
         ]);
         $user->assignRole(Role::SUPERADMIN);
         $user->givePermissionTo(Permission::ALL);
-        $userId = $user->id;
-        $school = factory(App\School::class, 1)->create([
-            'name' => 'Technological University of the Philippines - Manila',
-            'user_id' => $userId
-        ]);
-        $user->schools()->attach([
-            $school->id
-        ]);
     }
 }

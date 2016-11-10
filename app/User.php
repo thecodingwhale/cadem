@@ -29,44 +29,4 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * Get the schools for the user.
-     */
-    public function schools()
-    {
-        return $this->belongsToMany('App\School', 'school_user');
-    }
-
-    /**
-     * Get the schools for the user.
-     */
-    public function school()
-    {
-        return $this->hasOne('App\School');
-    }
-
-    /**
-     * Get the schools for the user.
-     */
-    public function subjects()
-    {
-        return $this->belongsToMany('App\Subject', 'subject_user');
-    }
-
-
-    /**
-     * Get the subject details created.
-     */
-    public function subject()
-    {
-        return $this->hasOne('App\Subject');
-    }
-
-    /**
-    * Get the role name of the user
-    */
-    public function getRole()
-    {
-        return $this->roles()->pluck('name')->first();
-    }
 }

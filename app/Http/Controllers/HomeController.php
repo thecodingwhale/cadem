@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
-use App\School;
 
 class HomeController extends Controller
 {
@@ -25,11 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $userId = Auth::user()->id;
-        $school = School::where('user_id', $userId)->first();
-
-        return view('home', [
-            'schoolName' => $school->name
-        ]);
+        return view('home');
     }
 }

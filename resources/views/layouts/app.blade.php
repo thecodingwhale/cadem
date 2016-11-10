@@ -65,11 +65,6 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('/management/accounts') }}">
-                                            Management
-                                        </a>
-                                    </li>
-                                    <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
