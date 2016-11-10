@@ -19,3 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/settings/profile', 'SettingsController@profile');
+Route::resource('admin/users', 'Admin\\UsersController');
+Route::resource('admin/schools', 'Admin\\SchoolsController');

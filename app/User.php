@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'main_account', 'password',
+        'name', 'email', 'password', 'main_account', 'active'
     ];
 
     /**
@@ -32,6 +32,16 @@ class User extends Authenticatable
     public function isMainAccount()
     {
         return $this->main_account ? 'Yes' : 'No';
+    }
+
+    public function isActive()
+    {
+        return $this->active ? 'Yes' : 'No';
+    }
+
+    public function getRoleName()
+    {
+        return $this->roles()->pluck('name')->first();
     }
 
 }
