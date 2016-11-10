@@ -26,7 +26,8 @@ class SettingsController extends Controller
         return view('settings.profile', [
             'user' => [
                 'name' => Auth::user()->name,
-                'role' => $role
+                'role' => $role,
+                'mainAccount' => Auth::user()->isMainAccount()
             ]
         ]);
     }

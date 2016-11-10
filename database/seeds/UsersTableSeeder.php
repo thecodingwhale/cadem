@@ -16,7 +16,8 @@ class UsersTableSeeder extends Seeder
         $user = factory(App\User::class, 1)->create([
             'name' => 'Aldren Terante',
             'email' => 'aldren.terante@gmail.com',
-            'password' => bcrypt('secret')
+            'password' => bcrypt('secret'),
+            'main_account' => true
         ]);
         $user->assignRole(Role::SUPERADMIN);
         $user->givePermissionTo(Permission::ALL);

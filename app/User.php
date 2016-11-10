@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'main_account', 'password',
     ];
 
     /**
@@ -28,5 +28,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function isMainAccount()
+    {
+        return $this->main_account ? 'Yes' : 'No';
+    }
 
 }
