@@ -4,16 +4,23 @@
     <div class="panel panel-default">
         <div class="panel-heading">School {{ $school->id }}</div>
         <div class="panel-body">
-
-            <a href="{{ url('admin/schools/' . $school->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit School"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
+            <a
+                href="{{ url('admin/schools') }}"
+                class="btn btn-default btn-sm"
+            >
+                Back
+            </a>
+            <a href="{{ url('admin/schools/' . $school->id . '/edit') }}" class="btn btn-primary btn-sm" title="Edit School">
+                Edit
+            </a>
             {!! Form::open([
                 'method'=>'DELETE',
                 'url' => ['admin/schools', $school->id],
                 'style' => 'display:inline'
             ]) !!}
-                {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true"/>', array(
+                {!! Form::button('Delete', array(
                         'type' => 'submit',
-                        'class' => 'btn btn-danger btn-xs',
+                        'class' => 'btn btn-danger btn-sm',
                         'title' => 'Delete School',
                         'onclick'=>'return confirm("Confirm delete?")'
                 ))!!}

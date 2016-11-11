@@ -5,15 +5,20 @@
         <div class="panel-heading">User {{ $user->id }}</div>
         <div class="panel-body">
 
-            <a href="{{ url('admin/users/' . $user->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit User"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
+            <a href="{{ url('admin/users') }}" class="btn btn-default btn-sm">
+                Back
+            </a>
+            <a href="{{ url('admin/users/' . $user->id . '/edit') }}" class="btn btn-primary btn-sm" title="Edit User">
+                Edit
+            </a>
             {!! Form::open([
                 'method'=>'DELETE',
                 'url' => ['admin/users', $user->id],
                 'style' => 'display:inline'
             ]) !!}
-                {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true"/>', array(
+                {!! Form::button('Delete', array(
                         'type' => 'submit',
-                        'class' => 'btn btn-danger btn-xs',
+                        'class' => 'btn btn-danger btn-sm',
                         'title' => 'Delete User',
                         'onclick'=>'return confirm("Confirm delete?")'
                 ))!!}
