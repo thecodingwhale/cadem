@@ -29,6 +29,14 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * Get the schools create by the user
+     */
+    public function schools()
+    {
+        return $this->belongsToMany('App\School');
+    }
+
     public function isMainAccount()
     {
         return $this->main_account ? 'Yes' : 'No';

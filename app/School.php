@@ -26,8 +26,22 @@ class School extends Model
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name', 'user_id'
     ];
 
+    /**
+     * Get the user that created the school.
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
+    /**
+     * The users that belong to the school.
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }

@@ -70,7 +70,6 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
-
         $user->assignRole(Role::SUPERADMIN);
 
         $school = School::create([
@@ -81,7 +80,6 @@ class RegisterController extends Controller
         $user->schools()->attach([
             $school->id
         ]);
-
 
         return $user;
     }
