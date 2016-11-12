@@ -9,6 +9,7 @@ use App\Http\Requests\AdminSchoolsCreateUpdateFormRequest;
 use App\School;
 use Illuminate\Http\Request;
 use Session;
+use AUth;
 
 class SchoolsController extends AdminController
 {
@@ -29,7 +30,7 @@ class SchoolsController extends AdminController
      */
     public function index()
     {
-        $schools = School::paginate(25);
+        $schools = School::where('registration_id', $this->registrationId)->paginate(25);
 
         return view('admin.schools.index', compact('schools'));
     }
@@ -56,7 +57,10 @@ class SchoolsController extends AdminController
 
         $requestData = $request->all();
 
-        School::create($requestData);
+        School::create(array_merge($requestData, [
+            'user_id' => $this->userId,
+            'registration_id' => $this->registrationId
+        ]));
 
         Session::flash('flash_message', 'School added!');
 

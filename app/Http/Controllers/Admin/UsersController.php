@@ -18,7 +18,7 @@ class UsersController extends AdminController
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Auth $auth)
     {
         parent::__construct();
     }
@@ -30,7 +30,7 @@ class UsersController extends AdminController
      */
     public function index()
     {
-        $users = User::paginate(25);
+        $users = User::where('registration_id', $this->registrationId)->paginate(25);
 
         return view('admin.users.index', compact('users'));
     }
@@ -56,10 +56,10 @@ class UsersController extends AdminController
      */
     public function store(AdminUsersCreateUpdateFormRequest $request)
     {
-
         $requestData = $request->all();
 
         $user = User::create(array_merge($requestData, [
+            'registration_id' => $this->registrationId,
             'password' => bcrypt('secret')
         ]));
 
