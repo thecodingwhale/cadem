@@ -24,8 +24,11 @@ class UsersTableSeeder extends Seeder
         $user->givePermissionTo(Permission::ALL);
 
         $school = factory(App\School::class, 1)->create([
-            'name' => 'Xavier University'
+            'name' => 'Xavier University',
+            'user_id' => $user->id
         ]);
+
+        $user->schools()->attach($school->id);
 
     }
 }
