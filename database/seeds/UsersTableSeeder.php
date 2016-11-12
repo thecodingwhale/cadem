@@ -13,7 +13,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        $registration = factory(App\Registration::class, 1)->create();
+
         $user = factory(App\User::class, 1)->create([
+            'registration_id' => $registration->id,
             'name' => 'Aldren Terante',
             'email' => 'aldren.terante@gmail.com',
             'password' => bcrypt('secret'),
@@ -24,8 +27,9 @@ class UsersTableSeeder extends Seeder
         $user->givePermissionTo(Permission::ALL);
 
         $school = factory(App\School::class, 1)->create([
-            'name' => 'Xavier University',
-            'user_id' => $user->id
+            'registration_id' => $registration->id,
+            'user_id' => $user->id,
+            'name' => 'Xavier University'
         ]);
 
         $user->schools()->attach($school->id);

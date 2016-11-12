@@ -26,7 +26,7 @@ class School extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'user_id'
+        'name', 'user_id', 'registration_id'
     ];
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Registration;
 use App\User;
 use App\School;
 use App\Role;
@@ -65,7 +66,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $registration = Registration::create();
+
         $user = User::create([
+            'registration_id' => $registration->id,
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
@@ -73,8 +77,9 @@ class RegisterController extends Controller
         $user->assignRole(Role::SUPERADMIN);
 
         $school = School::create([
-            'name' => $data['school_name'],
-            'user_id' => $user->id
+            'registration_id' => $registration->id,
+            'user_id' => $user->id,
+            'name' => $data['school_name']
         ]);
 
         $user->schools()->attach([

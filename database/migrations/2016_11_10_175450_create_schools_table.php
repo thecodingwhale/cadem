@@ -14,6 +14,8 @@ class CreateSchoolsTable extends Migration
     {
         Schema::create('schools', function(Blueprint $table) {
             $table->increments('id');
+            $table->integer('registration_id')->unsigned();
+            $table->foreign('registration_id')->references('id')->on('registration');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');

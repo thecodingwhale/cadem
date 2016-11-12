@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests\AdminSchoolsCreateUpdateFormRequest;
 
 use App\School;
 use Illuminate\Http\Request;
 use Session;
 
-class SchoolsController extends Controller
+class SchoolsController extends AdminController
 {
     /**
      * Create a new controller instance.
@@ -19,7 +19,7 @@ class SchoolsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        parent::__construct();
     }
 
     /**
