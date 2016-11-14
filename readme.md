@@ -6,6 +6,9 @@
 `vendor/bin/behat --suite [@tag_name] --append-snippets`
 `vendor/bin/behat --suite user_registration`
 
+## Quick CRUD Generator
+`php artisan crud:generate Posts --fields="title#string;" --view-path=admin --controller-namespace=Admin --route-group=admin`
+
 ## Current Development Issues
 
 ## License

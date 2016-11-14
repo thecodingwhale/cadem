@@ -1,30 +1,23 @@
-@extends('layouts.app')
+@extends('layouts.sidebar-left')
 
-@section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Create New %%modelName%%</div>
-                    <div class="panel-body">
+@section('main')
+    <div class="panel panel-default">
+        <div class="panel-heading">Create New %%modelName%%</div>
+        <div class="panel-body">
+            <p>
+                <a
+                    href="{{ url('/%%routeGroup%%%%viewName%%') }}"
+                    class="btn btn-default btn-sm"
+                >
+                    Back
+                </a>
+            </p>
+            {!! Form::open(['url' => '/%%routeGroup%%%%viewName%%', 'class' => 'form-horizontal', 'files' => true]) !!}
 
-                        @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
+            @include ('%%viewTemplateDir%%.form')
 
-                        {!! Form::open(['url' => '/%%routeGroup%%%%viewName%%', 'class' => 'form-horizontal', 'files' => true]) !!}
+            {!! Form::close() !!}
 
-                        @include ('%%viewTemplateDir%%.form')
-
-                        {!! Form::close() !!}
-
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 @endsection
