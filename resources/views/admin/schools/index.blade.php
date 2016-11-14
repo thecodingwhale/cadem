@@ -28,10 +28,18 @@
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->name }}</td>
                             <td>
-                                <a href="{{ url('/admin/schools/' . $item->id) }}" class="btn btn-success btn-xs" title="View School">
+                                <a
+                                    href="{{ url('/admin/schools/' . $item->id) }}"
+                                    class="btn btn-success btn-xs"
+                                    title="View School"
+                                >
                                     View
                                 </a>
-                                <a href="{{ url('/admin/schools/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit School">
+                                <a
+                                    href="{{ url('/admin/schools/' . $item->id . '/edit') }}"
+                                    class="btn btn-primary btn-xs"
+                                    title="Edit School"
+                                >
                                     Edit
                                 </a>
                                 {!! Form::open([

@@ -2,30 +2,31 @@
 
 @section('main')
     <div class="panel panel-default">
-        <div class="panel-heading">School {{ $school->id }}</div>
+        <div class="panel-heading">Subject {{ $subject->id }}</div>
         <div class="panel-body">
             <a
-                href="{{ url('admin/schools') }}"
+                href="{{ url('admin/subjects') }}"
                 class="btn btn-default btn-sm"
             >
                 Back
             </a>
             <a
-                href="{{ url('admin/schools/' . $school->id . '/edit') }}"
+                href="{{ url('admin/subjects/' . $subject->id . '/edit') }}"
                 class="btn btn-primary btn-sm"
-                title="Edit School"
+                title="Edit Subject"
             >
                 Edit
             </a>
+
             {!! Form::open([
                 'method'=>'DELETE',
-                'url' => ['admin/schools', $school->id],
+                'url' => ['admin/subjects', $subject->id],
                 'style' => 'display:inline'
             ]) !!}
                 {!! Form::button('Delete', array(
                         'type' => 'submit',
                         'class' => 'btn btn-danger btn-sm',
-                        'title' => 'Delete School',
+                        'title' => 'Delete Subject',
                         'onclick'=>'return confirm("Confirm delete?")'
                 ))!!}
             {!! Form::close() !!}
@@ -36,9 +37,10 @@
                 <table class="table table-borderless">
                     <tbody>
                         <tr>
-                            <th>ID</th><td>{{ $school->id }}</td>
+                            <th>ID</th>
+                            <td>{{ $subject->id }}</td>
                         </tr>
-                        <tr><th> Name </th><td> {{ $school->name }} </td></tr>
+                        <tr><th> Name </th><td> {{ $subject->name }} </td></tr><tr><th> Code </th><td> {{ $subject->code }} </td></tr>
                     </tbody>
                 </table>
             </div>
