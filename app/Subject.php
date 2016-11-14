@@ -25,7 +25,16 @@ class Subject extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'code'];
+    protected $fillable = [
+        'name', 'code', 'registration_id', 'user_id'
+    ];
 
-    
+    /**
+     * Get the user that created the school.
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
 }

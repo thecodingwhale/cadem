@@ -3,14 +3,24 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\AdminController;
 
 use App\Subject;
 use Illuminate\Http\Request;
 use Session;
 
-class SubjectsController extends Controller
+class SubjectsController extends AdminController
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +28,7 @@ class SubjectsController extends Controller
      */
     public function index()
     {
-        $subjects = Subject::paginate(25);
+        $subjects = Subject::where('registration_id', $this->registrationId)->paginate(25);
 
         return view('admin.subjects.index', compact('subjects'));
     }
@@ -45,7 +55,10 @@ class SubjectsController extends Controller
 
         $requestData = $request->all();
 
-        Subject::create($requestData);
+        Subject::create(array_merge($requestData, [
+            'user_id' => $this->userId,
+            'registration_id' => $this->registrationId
+        ]));
 
         Session::flash('flash_status_message', 'Subject added!');
 

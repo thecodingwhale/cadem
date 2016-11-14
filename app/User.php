@@ -30,11 +30,19 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the schools create by the user
+     * Get the schools created by the user.
      */
     public function schools()
     {
         return $this->belongsToMany('App\School');
+    }
+
+    /**
+     * Get the subjects created by the user.
+     */
+    public function subjects()
+    {
+        return $this->belongsToMany('App\Subject');
     }
 
     public function isMainAccount()
