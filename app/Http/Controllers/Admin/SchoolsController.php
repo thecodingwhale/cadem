@@ -62,7 +62,7 @@ class SchoolsController extends AdminController
             'registration_id' => $this->registrationId
         ]));
 
-        Session::flash('flash_message', 'School added!');
+        Session::flash('flash_status_message', 'School added!');
 
         return redirect('admin/schools');
     }
@@ -111,7 +111,7 @@ class SchoolsController extends AdminController
         $school = School::findOrFail($id);
         $school->update($requestData);
 
-        Session::flash('flash_message', 'School updated!');
+        Session::flash('flash_status_message', 'School updated!');
 
         return redirect('admin/schools');
     }
@@ -127,7 +127,7 @@ class SchoolsController extends AdminController
     {
         School::destroy($id);
 
-        Session::flash('flash_message', 'School deleted!');
+        Session::flash('flash_status_message', 'School deleted!');
 
         return redirect('admin/schools');
     }
