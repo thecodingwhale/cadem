@@ -10,56 +10,61 @@
                     class="btn btn-primary btn-sm"
                     title="Add New %%modelName%%"
                 >
-                    Add school
+                    Add %%modelName%%
                 </a>
             </p>
-            <div class="table-responsive">
-                <table class="table table-borderless">
-                    <thead>
-                        <tr>
-                            <th>ID</th>%%formHeadingHtml%%<th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($%%crudName%% as $item)
-                        <tr>
-                            <td>{{ $item->id }}</td>
-                            %%formBodyHtml%%
-                            <td>
-                                <a
-                                    href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%%) }}"
-                                    class="btn btn-success btn-xs"
-                                    title="View %%modelName%%"
-                                >
-                                    View
-                                </a>
-                                <a
-                                    href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%% . '/edit') }}"
-                                    class="btn btn-primary btn-xs"
-                                    title="Edit %%modelName%%"
-                                >
-                                    Edit
-                                </a>
-                                {!! Form::open([
-                                    'method'=>'DELETE',
-                                    'url' => ['/%%routeGroup%%%%viewName%%', $item->%%primaryKey%%],
-                                    'style' => 'display:inline'
-                                ]) !!}
-                                    {!! Form::button('Delete', array(
-                                            'type' => 'submit',
-                                            'class' => 'btn btn-danger btn-xs',
-                                            'title' => 'Delete %%modelName%%',
-                                            'onclick'=>'return confirm("Confirm delete?")'
-                                    )) !!}
-                                {!! Form::close() !!}
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-                <div class="pagination-wrapper"> {!! $%%crudName%%->render() !!} </div>
-            </div>
-
+            @if(count($%%crudName%%) != 0)
+                <div class="table-responsive">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th>ID</th>%%formHeadingHtml%%<th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($%%crudName%% as $item)
+                            <tr>
+                                <td>{{ $item->id }}</td>
+                                %%formBodyHtml%%
+                                <td>
+                                    <a
+                                        href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%%) }}"
+                                        class="btn btn-success btn-xs"
+                                        title="View %%modelName%%"
+                                    >
+                                        View
+                                    </a>
+                                    <a
+                                        href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%% . '/edit') }}"
+                                        class="btn btn-primary btn-xs"
+                                        title="Edit %%modelName%%"
+                                    >
+                                        Edit
+                                    </a>
+                                    {!! Form::open([
+                                        'method'=>'DELETE',
+                                        'url' => ['/%%routeGroup%%%%viewName%%', $item->%%primaryKey%%],
+                                        'style' => 'display:inline'
+                                    ]) !!}
+                                        {!! Form::button('Delete', array(
+                                                'type' => 'submit',
+                                                'class' => 'btn btn-danger btn-xs',
+                                                'title' => 'Delete %%modelName%%',
+                                                'onclick'=>'return confirm("Confirm delete?")'
+                                        )) !!}
+                                    {!! Form::close() !!}
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                    <div class="pagination-wrapper"> {!! $%%crudName%%->render() !!} </div>
+                </div>
+            @else
+                <div class="alert alert-info">
+                    No %%modelName%% added.
+                </div>
+            @endif
         </div>
     </div>
 @endsection
