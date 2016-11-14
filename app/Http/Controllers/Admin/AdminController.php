@@ -19,7 +19,10 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->userId = Auth::user()->id;
-        $this->registrationId = Auth::user()->registration_id;
+        $this->middleware(function ($request, $next) {
+            $this->userId = Auth::user()->id;
+            $this->registrationId = Auth::user()->registration_id;
+            return $next($request);
+        });
     }
 }
