@@ -45,6 +45,14 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Subject');
     }
 
+    /**
+     * Get the courses created by the user.
+     */
+    public function courses()
+    {
+        return $this->belongsToMany('App\Course');
+    }
+
     public function isMainAccount()
     {
         return $this->main_account ? 'Yes' : 'No';
