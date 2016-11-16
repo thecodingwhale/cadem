@@ -5,6 +5,7 @@
         {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
+
 <div class="form-group {{ $errors->has('code') ? 'has-error' : ''}}">
     {!! Form::label('code', 'Code', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
@@ -13,6 +14,13 @@
     </div>
 </div>
 
+<div class="form-group {{ $errors->has('units') ? 'has-error' : ''}}">
+    {!! Form::label('units', 'Units', ['class' => 'col-md-4 control-label']) !!}
+    <div class="col-md-6">
+        {!! Form::text('units', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('units', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
 
 <div class="form-group">
     <div class="col-md-offset-4 col-md-4">

@@ -20,6 +20,7 @@ class CreateSubjectsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
             $table->string('code');
+            $table->unsignedSmallInteger('units');
             $table->timestamps();
         });
     }

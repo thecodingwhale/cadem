@@ -2,7 +2,7 @@
 
 @section('main')
     <div class="panel panel-default">
-        <div class="panel-heading">Subject {{ $subject->id }}</div>
+        <div class="panel-heading">{{ $subject->name }}</div>
         <div class="panel-body">
             <a
                 href="{{ url('admin/subjects') }}"
@@ -40,7 +40,18 @@
                             <th>ID</th>
                             <td>{{ $subject->id }}</td>
                         </tr>
-                        <tr><th> Name </th><td> {{ $subject->name }} </td></tr><tr><th> Code </th><td> {{ $subject->code }} </td></tr>
+                        <tr>
+                            <th>Name</th>
+                            <td>{{ $subject->name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Code</th>
+                            <td>{{ $subject->code }}</td>
+                        </tr>
+                        <tr>
+                            <th>Units</th>
+                            <td>{{ $subject->units }}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

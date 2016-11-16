@@ -18,14 +18,20 @@
                     <table class="table table-borderless">
                         <thead>
                             <tr>
-                                <th>ID</th><th> Name </th><th> Code </th><th>Actions</th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Code</th>
+                                <th>Units</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                         @foreach($subjects as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item->name }}</td><td>{{ $item->code }}</td>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->code }}</td>
+                                <td>{{ $item->units }}</td>
                                 <td>
                                     <a
                                         href="{{ url('/admin/subjects/' . $item->id) }}"
