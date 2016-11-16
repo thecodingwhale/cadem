@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class Curriculum extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'courses';
+    protected $table = 'curricula';
 
     /**
     * The database primary key value.
@@ -26,7 +26,7 @@ class Course extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'code', 'registration_id', 'user_id'
+        'registration_id', 'user_id', 'course_id', 'year_level', 'semester'
     ];
 
     /**
@@ -38,10 +38,11 @@ class Course extends Model
     }
 
     /**
-     * Get the curriculum that relates to the course.
+     * Get the courses for a Curriculum.
      */
-    public function curriculum()
+    public function courses()
     {
-        return $this->belongsTo('App\Curriculum');
+        return $this->hasMany('App\Course');
     }
+
 }
