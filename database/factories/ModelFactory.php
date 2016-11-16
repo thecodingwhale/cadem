@@ -40,3 +40,18 @@ $factory->define(App\Course::class, function (Faker\Generator $faker) {
         'code' => 'BSCS'
     ];
 });
+
+$factory->define(App\Subject::class, function (Faker\Generator $faker) {
+    return [
+        'name' => 'College Algebra',
+        'code' => 'Math 1',
+        'units' => 3
+    ];
+});
+
+$factory->define(App\Curriculum::class, function (Faker\Generator $faker) {
+    return [
+        'year_level' => 1,
+        'semester' => 1
+    ];
+});
