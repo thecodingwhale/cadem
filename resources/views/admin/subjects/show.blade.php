@@ -12,7 +12,7 @@
             </a>
             <a
                 href="{{ url('admin/subjects/' . $subject->id . '/edit') }}"
-                class="btn btn-primary btn-sm"
+                class="btn btn-default btn-sm"
                 title="Edit Subject"
             >
                 Edit
@@ -25,7 +25,7 @@
             ]) !!}
                 {!! Form::button('Delete', array(
                         'type' => 'submit',
-                        'class' => 'btn btn-danger btn-sm',
+                        'class' => 'btn btn-default btn-sm',
                         'title' => 'Delete Subject',
                         'onclick'=>'return confirm("Confirm delete?")'
                 ))!!}

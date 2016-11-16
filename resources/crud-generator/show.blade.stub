@@ -25,7 +25,7 @@
             ]) !!}
                 {!! Form::button('Delete', array(
                         'type' => 'submit',
-                        'class' => 'btn btn-danger btn-sm',
+                        'class' => 'btn btn-default btn-sm',
                         'title' => 'Delete %%modelName%%',
                         'onclick'=>'return confirm("Confirm delete?")'
                 ))!!}

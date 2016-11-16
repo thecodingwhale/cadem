@@ -8,7 +8,7 @@
             <a href="{{ url('admin/users') }}" class="btn btn-default btn-sm">
                 Back
             </a>
-            <a href="{{ url('admin/users/' . $user->id . '/edit') }}" class="btn btn-primary btn-sm" title="Edit User">
+            <a href="{{ url('admin/users/' . $user->id . '/edit') }}" class="btn btn-default btn-sm" title="Edit User">
                 Edit
             </a>
             {!! Form::open([
@@ -18,7 +18,7 @@
             ]) !!}
                 {!! Form::button('Delete', array(
                         'type' => 'submit',
-                        'class' => 'btn btn-danger btn-sm',
+                        'class' => 'btn btn-default btn-sm',
                         'title' => 'Delete User',
                         'onclick'=>'return confirm("Confirm delete?")'
                 ))!!}

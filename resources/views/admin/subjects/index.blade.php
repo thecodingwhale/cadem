@@ -7,7 +7,7 @@
             <p>
                 <a
                     href="{{ url('/admin/subjects/create') }}"
-                    class="btn btn-primary btn-sm"
+                    class="btn btn-default btn-sm"
                     title="Add New Subject"
                 >
                     Add subject
@@ -29,14 +29,14 @@
                                 <td>
                                     <a
                                         href="{{ url('/admin/subjects/' . $item->id) }}"
-                                        class="btn btn-success btn-xs"
+                                        class="btn btn-default btn-xs"
                                         title="View Subject"
                                     >
                                         View
                                     </a>
                                     <a
                                         href="{{ url('/admin/subjects/' . $item->id . '/edit') }}"
-                                        class="btn btn-primary btn-xs"
+                                        class="btn btn-default btn-xs"
                                         title="Edit Subject"
                                     >
                                         Edit
@@ -48,7 +48,7 @@
                                     ]) !!}
                                         {!! Form::button('Delete', array(
                                                 'type' => 'submit',
-                                                'class' => 'btn btn-danger btn-xs',
+                                                'class' => 'btn btn-default btn-xs',
                                                 'title' => 'Delete Subject',
                                                 'onclick'=>'return confirm("Confirm delete?")'
                                         )) !!}

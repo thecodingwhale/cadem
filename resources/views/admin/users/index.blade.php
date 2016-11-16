@@ -7,7 +7,7 @@
             <p>
                 <a
                     href="{{ url('/admin/users/create') }}"
-                    class="btn btn-primary btn-sm"
+                    class="btn btn-default btn-sm"
                     title="Add New User">
                         Add user
                 </a>
@@ -35,8 +35,8 @@
                             <td>{{ $item->isActive() }}</td>
                             <td>{{ $item->getRoleName() }}</td>
                             <td>
-                                <a href="{{ url('/admin/users/' . $item->id) }}" class="btn btn-success btn-xs" title="View User">View</a>
-                                <a href="{{ url('/admin/users/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit User">Edit</a>
+                                <a href="{{ url('/admin/users/' . $item->id) }}" class="btn btn-default btn-xs" title="View User">View</a>
+                                <a href="{{ url('/admin/users/' . $item->id . '/edit') }}" class="btn btn-default btn-xs" title="Edit User">Edit</a>
                                 {!! Form::open([
                                     'method'=>'DELETE',
                                     'url' => ['/admin/users', $item->id],
@@ -44,7 +44,7 @@
                                 ]) !!}
                                     {!! Form::button('Delete', array(
                                             'type' => 'submit',
-                                            'class' => 'btn btn-danger btn-xs',
+                                            'class' => 'btn btn-default btn-xs',
                                             'title' => 'Delete User',
                                             'onclick'=>'return confirm("Confirm delete?")'
                                     )) !!}

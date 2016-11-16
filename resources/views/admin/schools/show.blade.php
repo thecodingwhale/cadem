@@ -12,7 +12,7 @@
             </a>
             <a
                 href="{{ url('admin/schools/' . $school->id . '/edit') }}"
-                class="btn btn-primary btn-sm"
+                class="btn btn-default btn-sm"
                 title="Edit School"
             >
                 Edit
@@ -24,7 +24,7 @@
             ]) !!}
                 {!! Form::button('Delete', array(
                         'type' => 'submit',
-                        'class' => 'btn btn-danger btn-sm',
+                        'class' => 'btn btn-default btn-sm',
                         'title' => 'Delete School',
                         'onclick'=>'return confirm("Confirm delete?")'
                 ))!!}

@@ -7,7 +7,7 @@
             <p>
                 <a
                     href="{{ url('/admin/schools/create') }}"
-                    class="btn btn-primary btn-sm"
+                    class="btn btn-default btn-sm"
                     title="Add New School"
                 >
                     Add school
@@ -30,14 +30,14 @@
                             <td>
                                 <a
                                     href="{{ url('/admin/schools/' . $item->id) }}"
-                                    class="btn btn-success btn-xs"
+                                    class="btn btn-default btn-xs"
                                     title="View School"
                                 >
                                     View
                                 </a>
                                 <a
                                     href="{{ url('/admin/schools/' . $item->id . '/edit') }}"
-                                    class="btn btn-primary btn-xs"
+                                    class="btn btn-default btn-xs"
                                     title="Edit School"
                                 >
                                     Edit
@@ -49,7 +49,7 @@
                                 ]) !!}
                                     {!! Form::button('Delete', array(
                                             'type' => 'submit',
-                                            'class' => 'btn btn-danger btn-xs',
+                                            'class' => 'btn btn-default btn-xs',
                                             'title' => 'Delete School',
                                             'onclick'=>'return confirm("Confirm delete?")'
                                     )) !!}

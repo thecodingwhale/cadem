@@ -7,7 +7,7 @@
             <p>
                 <a
                     href="{{ url('/admin/curriculum/create') }}"
-                    class="btn btn-primary btn-sm"
+                    class="btn btn-default btn-sm"
                     title="Add New Curriculum"
                 >
                     Add Curriculum
@@ -35,14 +35,14 @@
                                 <td>
                                     <a
                                         href="{{ url('/admin/curriculum/' . $item->id) }}"
-                                        class="btn btn-success btn-xs"
+                                        class="btn btn-default btn-xs"
                                         title="View Curriculum"
                                     >
                                         View
                                     </a>
                                     <a
                                         href="{{ url('/admin/curriculum/' . $item->id . '/edit') }}"
-                                        class="btn btn-primary btn-xs"
+                                        class="btn btn-default btn-xs"
                                         title="Edit Curriculum"
                                     >
                                         Edit
@@ -54,7 +54,7 @@
                                     ]) !!}
                                         {!! Form::button('Delete', array(
                                                 'type' => 'submit',
-                                                'class' => 'btn btn-danger btn-xs',
+                                                'class' => 'btn btn-default btn-xs',
                                                 'title' => 'Delete Curriculum',
                                                 'onclick'=>'return confirm("Confirm delete?")'
                                         )) !!}

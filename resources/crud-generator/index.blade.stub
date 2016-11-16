@@ -7,7 +7,7 @@
             <p>
                 <a
                     href="{{ url('/%%routeGroup%%%%viewName%%/create') }}"
-                    class="btn btn-primary btn-sm"
+                    class="btn btn-default btn-sm"
                     title="Add New %%modelName%%"
                 >
                     Add %%modelName%%
@@ -29,14 +29,14 @@
                                 <td>
                                     <a
                                         href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%%) }}"
-                                        class="btn btn-success btn-xs"
+                                        class="btn btn-default btn-xs"
                                         title="View %%modelName%%"
                                     >
                                         View
                                     </a>
                                     <a
                                         href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%% . '/edit') }}"
-                                        class="btn btn-primary btn-xs"
+                                        class="btn btn-default btn-xs"
                                         title="Edit %%modelName%%"
                                     >
                                         Edit
@@ -48,7 +48,7 @@
                                     ]) !!}
                                         {!! Form::button('Delete', array(
                                                 'type' => 'submit',
-                                                'class' => 'btn btn-danger btn-xs',
+                                                'class' => 'btn btn-default btn-xs',
                                                 'title' => 'Delete %%modelName%%',
                                                 'onclick'=>'return confirm("Confirm delete?")'
                                         )) !!}
