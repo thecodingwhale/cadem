@@ -33,3 +33,10 @@ $factory->define(App\School::class, function (Faker\Generator $faker) {
         'name' => $faker->name
     ];
 });
+
+$factory->define(App\Course::class, function (Faker\Generator $faker) {
+    return [
+        'name' => 'Bachelor of Science in Computer Science',
+        'code' => 'BSCS'
+    ];
+});

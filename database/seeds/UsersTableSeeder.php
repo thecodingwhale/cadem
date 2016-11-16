@@ -34,5 +34,17 @@ class UsersTableSeeder extends Seeder
 
         $user->schools()->attach($school->id);
 
+        factory(App\Course::class, 1)->create([
+            'registration_id' => $registration->id,
+            'user_id' => $user->id,
+            'name' => 'Bachelor of Science in Computer Science',
+            'code' => 'BSCS'
+        ]);
+        factory(App\Course::class, 1)->create([
+            'registration_id' => $registration->id,
+            'user_id' => $user->id,
+            'name' => 'Bachelor of Science in Hotel and Restaurant Management',
+            'code' => 'BSHRM'
+        ]);
     }
 }
