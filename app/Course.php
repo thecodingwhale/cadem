@@ -42,6 +42,6 @@ class Course extends Model
      */
     public function curriculum()
     {
-        return $this->belongsTo('App\Curriculum');
+        return $this->hasOne('App\Curriculum');
     }
 }

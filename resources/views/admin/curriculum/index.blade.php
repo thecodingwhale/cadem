@@ -29,7 +29,7 @@
                         @foreach($curriculum as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item->course_id }}</td>
+                                <td>{{ $item->course->name }}</td>
                                 <td>{{ $item->year_level }}</td>
                                 <td>{{ $item->semester }}</td>
                                 <td>

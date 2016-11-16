@@ -40,9 +40,9 @@ class Curriculum extends Model
     /**
      * Get the courses for a Curriculum.
      */
-    public function courses()
+    public function course()
     {
-        return $this->hasMany('App\Course');
+        return $this->belongsTo('App\Course');
     }
 
 }

@@ -40,7 +40,18 @@
                             <th>ID</th>
                             <td>{{ $curriculum->id }}</td>
                         </tr>
-                        <tr><th> Title </th><td> {{ $curriculum->title }} </td></tr>
+                        <tr>
+                            <th>Course</th>
+                            <td>{{ $curriculum->course->name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Year Level</th>
+                            <td>{{ $curriculum->year_level }}</td>
+                        </tr>
+                        <tr>
+                            <th>Semester</th>
+                            <td>{{ $curriculum->semester }}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
