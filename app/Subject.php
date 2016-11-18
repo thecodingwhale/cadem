@@ -32,9 +32,9 @@ class Subject extends Model
     /**
      * Get the user that created the school.
      */
-    public function user()
+    public function curricula()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsToMany('App\Curriculum');
     }
 
 }

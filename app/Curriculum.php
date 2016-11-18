@@ -45,4 +45,12 @@ class Curriculum extends Model
         return $this->belongsTo('App\Course');
     }
 
+    /**
+     * The subjects that belong to the curriculum.
+     */
+    public function subjects()
+    {
+        return $this->belongsToMany('App\Subject');
+    }
+
 }
