@@ -52,6 +52,17 @@
                             <th>Units</th>
                             <td>{{ $subject->units }}</td>
                         </tr>
+                        <tr>
+                            <th>Courses</th>
+                            <td>
+                                @foreach ($courses as $course)
+                                    <p>
+                                        <strong>{{ $course['name'] }}</strong><<br />
+                                        <small>{{ $course['year'] }} year {{ $course['semester'] }} semester</small>
+                                    </p>
+                                @endforeach
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

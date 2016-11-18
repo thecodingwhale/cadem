@@ -76,7 +76,17 @@ class SubjectsController extends AdminController
     {
         $subject = Subject::findOrFail($id);
 
-        return view('admin.subjects.show', compact('subject'));
+        $courses = [];
+        $getCurricula = $subject->curricula()->get();
+        foreach ($getCurricula as $curriculum) {
+            $courses[] = [
+                'name' => $curriculum->course->name,
+                'year' => $curriculum->year_level,
+                'semester' => $curriculum->semester
+            ];
+        }
+
+        return view('admin.subjects.show', compact('subject', 'courses'));
     }
 
     /**

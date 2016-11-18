@@ -80,9 +80,16 @@ class CurriculumController extends AdminController
      */
     public function show($id)
     {
+        $subjects = [];
         $curriculum = Curriculum::findOrFail($id);
+        $getSubjects = $curriculum->subjects()->get();
+        foreach ($getSubjects as $subject) {
+            $subjects[] = [
+                'name' => $subject->name
+            ];
+        }
 
-        return view('admin.curriculum.show', compact('curriculum'));
+        return view('admin.curriculum.show', compact('curriculum', 'subjects'));
     }
 
     /**

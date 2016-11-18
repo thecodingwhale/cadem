@@ -52,6 +52,14 @@
                             <th>Semester</th>
                             <td>{{ $curriculum->semester }}</td>
                         </tr>
+                        <tr>
+                            <th>Subjects</th>
+                            <td>
+                                @foreach ($subjects as $subject)
+                                    <p>{{ $subject['name'] }}</p>
+                                @endforeach
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
