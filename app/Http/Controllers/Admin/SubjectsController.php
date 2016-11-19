@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Admin\AdminController;
 
 use App\Subject;
+use App\Curriculum;
 use Illuminate\Http\Request;
 use Session;
 
@@ -40,7 +41,15 @@ class SubjectsController extends AdminController
      */
     public function create()
     {
-        return view('admin.subjects.create');
+        $curricula = [];
+        $getCurricula = Curriculum::where('registration_id', $this->registrationId)->get();
+        foreach ($getCurricula as $curriculum) {
+            $courseName = $curriculum->course->name;
+            $curriculumName = $curriculum->year_level. " year " .$curriculum->semester. " semester " ." ". $courseName;
+            $curricula[$curriculum->id] = $curriculumName;
+        }
+
+        return view('admin.subjects.create', compact('curricula'));
     }
 
     /**
@@ -55,10 +64,12 @@ class SubjectsController extends AdminController
 
         $requestData = $request->all();
 
-        Subject::create(array_merge($requestData, [
+        $subject = Subject::create(array_merge($requestData, [
             'user_id' => $this->userId,
             'registration_id' => $this->registrationId
         ]));
+
+        $subject->curricula()->attach([$requestData['curriculum']]);
 
         Session::flash('flash_status_message', 'Subject added!');
 
