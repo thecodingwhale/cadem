@@ -33,6 +33,9 @@
                             <a href="{{ url('admin/curriculum') }}" class="list-group-item">
                                 Curriculum
                             </a>
+                            <a href="{{ url('admin/enrollment') }}" class="list-group-item">
+                                Enrollment
+                            </a>
                         </div>
                     </div>
                 </div>
