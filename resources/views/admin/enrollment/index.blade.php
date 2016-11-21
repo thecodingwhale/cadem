@@ -10,22 +10,28 @@
                     class="btn btn-default btn-sm"
                     title="Add New Enrollment"
                 >
-                    Add Enrollment
+                    Open New Enrollment
                 </a>
             </p>
             @if(count($enrollment) != 0)
                 <div class="table-responsive">
                     <table class="table table-borderless">
                         <thead>
-                            <tr>
-                                <th>ID</th><th> Code </th><th>Actions</th>
-                            </tr>
+                            <th>ID</th>
+                            <th>Semester</th>
+                            <th>School Year From</th>
+                            <th>School Year To</th>
+                            <th>Open</th>
+                            <th>Actions</th>
                         </thead>
                         <tbody>
                         @foreach($enrollment as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item->code }}</td>
+                                <td>{{ $item->semester }}</td>
+                                <td>{{ $item->school_year_from->format('Y') }}</td>
+                                <td>{{ $item->school_year_to->format('Y') }}</td>
+                                <td>{{ $item->open }}</td>
                                 <td>
                                     <a
                                         href="{{ url('/admin/enrollment/' . $item->id) }}"

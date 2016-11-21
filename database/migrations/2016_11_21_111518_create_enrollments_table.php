@@ -14,11 +14,14 @@ class CreateEnrollmentsTable extends Migration
     {
         Schema::create('enrollment', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('code');
             $table->integer('registration_id')->unsigned();
             $table->foreign('registration_id')->references('id')->on('registration');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('semester');
+            $table->boolean('open')->default(false);
+            $table->date('school_year_from');
+            $table->date('school_year_to');
             $table->timestamps();
         });
     }

@@ -3,14 +3,24 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\AdminController;
 
 use App\Enrollment;
 use Illuminate\Http\Request;
 use Session;
 
-class EnrollmentController extends Controller
+class EnrollmentController extends AdminController
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +28,7 @@ class EnrollmentController extends Controller
      */
     public function index()
     {
-        $enrollment = Enrollment::paginate(25);
-
+        $enrollment = Enrollment::where('registration_id', $this->registrationId)->paginate(25);
         return view('admin.enrollment.index', compact('enrollment'));
     }
 
@@ -42,10 +51,14 @@ class EnrollmentController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $requestData = $request->all();
-        
-        Enrollment::create($requestData);
+
+        $enrollment = Enrollment::create(array_merge($requestData, [
+            'user_id' => $this->userId,
+            'registration_id' => $this->registrationId,
+            'open' => isset($requestData['open'])
+        ]));
 
         Session::flash('flash_status_message', 'Enrollment added!');
 
@@ -90,9 +103,9 @@ class EnrollmentController extends Controller
      */
     public function update($id, Request $request)
     {
-        
+
         $requestData = $request->all();
-        
+
         $enrollment = Enrollment::findOrFail($id);
         $enrollment->update($requestData);
 
