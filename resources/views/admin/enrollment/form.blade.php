@@ -1,11 +1,3 @@
-<div class="form-group {{ $errors->has('semester') ? 'has-error' : ''}}">
-    {!! Form::label('semester', 'Semester', ['class' => 'col-md-4 control-label']) !!}
-    <div class="col-md-6">
-        {!! Form::text('semester', null, ['class' => 'form-control']) !!}
-        {!! $errors->first('semester', '<p class="help-block">:message</p>') !!}
-    </div>
-</div>
-
 <div class="form-group {{ $errors->has('open') ? 'has-error' : ''}}">
     {!! Form::label('open', 'Open', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">

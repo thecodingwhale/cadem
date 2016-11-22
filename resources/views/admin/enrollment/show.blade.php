@@ -37,10 +37,21 @@
                 <table class="table table-borderless">
                     <tbody>
                         <tr>
-                            <th>ID</th>
+                            <td>ID</td>
                             <td>{{ $enrollment->id }}</td>
                         </tr>
-                        <tr><th> Code </th><td> {{ $enrollment->code }} </td></tr>
+                        <tr>
+                            <td>School Year From</td>
+                            <td>{{ $enrollment->school_year_from->format('Y') }}</td>
+                        </tr>
+                        <tr>
+                            <td>School Year To</td>
+                            <td>{{ $enrollment->school_year_to->format('Y') }}</td>
+                        </tr>
+                        <tr>
+                            <td>Open</td>
+                            <td>{{ $enrollment->open }}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

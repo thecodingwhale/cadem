@@ -27,7 +27,6 @@ class Enrollment extends Model
      * @var array
      */
     protected $fillable = [
-        'semester',
         'open',
         'school_year_to',
         'school_year_from',

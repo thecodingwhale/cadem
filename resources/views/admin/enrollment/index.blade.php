@@ -18,7 +18,6 @@
                     <table class="table table-borderless">
                         <thead>
                             <th>ID</th>
-                            <th>Semester</th>
                             <th>School Year From</th>
                             <th>School Year To</th>
                             <th>Open</th>
@@ -28,7 +27,6 @@
                         @foreach($enrollment as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item->semester }}</td>
                                 <td>{{ $item->school_year_from->format('Y') }}</td>
                                 <td>{{ $item->school_year_to->format('Y') }}</td>
                                 <td>{{ $item->open }}</td>
