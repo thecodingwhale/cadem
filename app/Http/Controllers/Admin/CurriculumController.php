@@ -29,7 +29,7 @@ class CurriculumController extends AdminController
      */
     public function index()
     {
-        $curriculum = Curriculum::paginate(25);
+        $curriculum = Curriculum::where('registration_id', $this->registrationId)->paginate(25);
 
         return view('admin.curriculum.index', compact('curriculum'));
     }
@@ -85,7 +85,9 @@ class CurriculumController extends AdminController
         $getSubjects = $curriculum->subjects()->get();
         foreach ($getSubjects as $subject) {
             $subjects[] = [
-                'name' => $subject->name
+                'name' => $subject->name,
+                'units' => $subject->units,
+                'hours' => $subject->hours
             ];
         }
 

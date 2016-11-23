@@ -29,6 +29,10 @@ class Curriculum extends Model
         'registration_id', 'user_id', 'course_id', 'year_level', 'semester'
     ];
 
+    public function totalUnits() {
+        return $this->subjects()->sum('units');
+    }
+
     /**
      * Get the user that created the course.
      */

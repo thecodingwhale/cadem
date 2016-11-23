@@ -21,6 +21,7 @@ class CreateSubjectsTable extends Migration
             $table->string('name');
             $table->string('code');
             $table->unsignedSmallInteger('units');
+            $table->unsignedSmallInteger('hours')->default(0);
             $table->timestamps();
         });
     }

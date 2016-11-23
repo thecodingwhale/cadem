@@ -22,6 +22,7 @@
                                 <th>Course</th>
                                 <th>Year Level</th>
                                 <th>Semester</th>
+                                <th>Total Units</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -32,6 +33,7 @@
                                 <td>{{ $item->course->name }}</td>
                                 <td>{{ $item->year_level }}</td>
                                 <td>{{ $item->semester }}</td>
+                                <td>{{ $item->totalUnits() }}</td>
                                 <td>
                                     <a
                                         href="{{ url('/admin/curriculum/' . $item->id) }}"

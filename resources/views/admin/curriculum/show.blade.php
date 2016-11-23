@@ -52,14 +52,32 @@
                             <th>Semester</th>
                             <td>{{ $curriculum->semester }}</td>
                         </tr>
-                        <tr>
-                            <th>Subjects</th>
-                            <td>
-                                @foreach ($subjects as $subject)
-                                    <p>{{ $subject['name'] }}</p>
-                                @endforeach
-                            </td>
-                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Subjects</div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-borderless">
+                    <thead>
+                        <th>Name</th>
+                        <th>Units</th>
+                        <th>Hours</th>
+                    </thead>
+                    <tbody>
+                        @foreach ($subjects as $subject)
+                            <tr>
+                                <td>{{ $subject['name'] }}</td>
+                                <td>{{ $subject['units'] }}</td>
+                                <td>{{ $subject['hours'] }}</td>
+                            </tr>
+                        @endforeach
+
                     </tbody>
                 </table>
             </div>

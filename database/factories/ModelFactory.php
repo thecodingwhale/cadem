@@ -45,7 +45,8 @@ $factory->define(App\Subject::class, function (Faker\Generator $faker) {
     return [
         'name' => 'College Algebra',
         'code' => 'Math 1',
-        'units' => 3
+        'units' => 3,
+        'hours' => 0
     ];
 });
 
