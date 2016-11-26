@@ -31,7 +31,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Practicum 2',
             'code' => 'HRM 183',
             'units' => 10,
-            'hours' => 10
         ]);
 
         $curriculumSecondSemester = \App\Curriculum::find(24);
@@ -48,7 +47,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Computer Application',
             'code' => 'Comp 21',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectTwo = factory(App\Subject::class, 1)->create([
@@ -57,7 +55,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Human Behavior in Organization',
             'code' => 'Management 102',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectThree = factory(App\Subject::class, 1)->create([
@@ -66,7 +63,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Total Quality Management',
             'code' => 'TQM 101',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectFour = factory(App\Subject::class, 1)->create([
@@ -75,7 +71,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Research in HRM',
             'code' => 'HRM 191',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectFive = factory(App\Subject::class, 1)->create([
@@ -84,7 +79,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Entrepreneurship and Business Planning',
             'code' => 'Entrep 101',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectSix = factory(App\Subject::class, 1)->create([
@@ -93,7 +87,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Events Management',
             'code' => 'Tourism 103',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectSeven = factory(App\Subject::class, 1)->create([
@@ -102,7 +95,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Cruise, Leisure and Recreation Management',
             'code' => 'HRM 131',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectEight = factory(App\Subject::class, 1)->create([
@@ -111,7 +103,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Science Technology and Society',
             'code' => 'STS 100 ',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $curriculumSecondSemester = \App\Curriculum::find(23);
@@ -135,7 +126,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Rizal’s Life, Works and Writings',
             'code' => 'Soc Sci 13',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectTwo = factory(App\Subject::class, 1)->create([
@@ -144,7 +134,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Society and Culture',
             'code' => 'Soc Sci 15',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectThree = factory(App\Subject::class, 1)->create([
@@ -153,7 +142,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Applied Mathematics',
             'code' => 'Math 101',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectFour = factory(App\Subject::class, 1)->create([
@@ -162,7 +150,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Tourism Planning and Development',
             'code' => 'Tourism 101',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectFive = factory(App\Subject::class, 1)->create([
@@ -171,7 +158,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Legal Aspects in HR and Tourism',
             'code' => 'HRM 152',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectSix = factory(App\Subject::class, 1)->create([
@@ -180,7 +166,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'F and B Management and Control System',
             'code' => 'HRM 122',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectSeven = factory(App\Subject::class, 1)->create([
@@ -189,7 +174,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Facilities Planning and Design Management',
             'code' => 'HRM 126',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectEight = factory(App\Subject::class, 1)->create([
@@ -198,7 +182,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'International Cuisine 2',
             'code' => 'HRM 172',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectNine = factory(App\Subject::class, 1)->create([
@@ -207,7 +190,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Foreign Language 2',
             'code' => 'HRM 12',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $curriculumSecondSemester = \App\Curriculum::find(22);
@@ -232,7 +214,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Foundations of Philosophy and Ethics',
             'code' => 'HUM - 12',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectTwo = factory(App\Subject::class, 1)->create([
@@ -241,7 +222,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'World Classics',
             'code' => 'HUM - 13',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectThree = factory(App\Subject::class, 1)->create([
@@ -250,7 +230,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Principles of Economics, Taxation and Land Reform with Cooperatives',
             'code' => 'Soc Sci - 12',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectFour = factory(App\Subject::class, 1)->create([
@@ -259,7 +238,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'General Psychology',
             'code' => 'Soc Sci - 14',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectFive = factory(App\Subject::class, 1)->create([
@@ -268,7 +246,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Basic Finance',
             'code' => 'Finance 101',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectSix = factory(App\Subject::class, 1)->create([
@@ -277,7 +254,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Tourism Industry Overview',
             'code' => 'Tourism 101',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectSeven = factory(App\Subject::class, 1)->create([
@@ -286,7 +262,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'International Cuisine 1',
             'code' => 'HRM - 171',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectEight = factory(App\Subject::class, 1)->create([
@@ -295,7 +270,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'International Cuisine 1',
             'code' => 'HRM - 171',
             'units' => 2,
-            'hours' => 2
         ]);
 
         $subjectNine = factory(App\Subject::class, 1)->create([
@@ -304,7 +278,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Rooms Division Management and Control System',
             'code' => 'HRM - 125',
             'units' => 2,
-            'hours' => 2
         ]);
 
         $subjectTen = factory(App\Subject::class, 1)->create([
@@ -313,7 +286,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Foreign Language 1',
             'code' => 'For Lang - 11',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $curriculumSecondSemester = \App\Curriculum::find(21);
@@ -340,7 +312,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Communication 4',
             'code' => 'AH - 4',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectTwo = factory(App\Subject::class, 1)->create([
@@ -349,7 +320,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Introduction to Arts',
             'code' => 'HUM - 11',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectThree = factory(App\Subject::class, 1)->create([
@@ -358,7 +328,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Asian Literature',
             'code' => 'HUM - 14',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectFour = factory(App\Subject::class, 1)->create([
@@ -367,7 +336,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Fundamentals of Accounting',
             'code' => 'Accounting 104',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectFive = factory(App\Subject::class, 1)->create([
@@ -376,7 +344,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Introduction to Tourism Theory',
             'code' => 'Tourism 100',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectSix = factory(App\Subject::class, 1)->create([
@@ -385,7 +352,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Beverage/Bar Operations Management (Bartending)',
             'code' => 'HRM 112',
             'units' => 2,
-            'hours' => 3
         ]);
 
         $subjectSeven = factory(App\Subject::class, 1)->create([
@@ -394,7 +360,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Marketing Principles and Practices in the Hospitality Industry',
             'code' => 'HRM 144',
             'units' => 2,
-            'hours' => 3
         ]);
 
         $curriculumSecondSemester = \App\Curriculum::find(20);
@@ -419,7 +384,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Principles Management',
             'code' => 'Management - 103',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectTwo = factory(App\Subject::class, 1)->create([
@@ -428,7 +392,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Banquet, Function and Catering Services Procedures and Management (Food and Beverage Services)',
             'code' => 'HRM - 121',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectThree = factory(App\Subject::class, 1)->create([
@@ -437,7 +400,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Baking and Pastry Production',
             'code' => 'HRM - 161',
             'units' => 4,
-            'hours' => 4
         ]);
 
         $subjectFour = factory(App\Subject::class, 1)->create([
@@ -446,7 +408,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Rooms Division Service Procedures (Front Office)',
             'code' => 'HRM - 124',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $curriculumFirstSemester = \App\Curriculum::find(19);
@@ -469,7 +430,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Pagbasa at Pagsulat Tungo sa Pananaliksik',
             'code' => 'Fil 12',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectTwo = factory(App\Subject::class, 1)->create([
@@ -478,7 +438,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Basic Statistics',
             'code' => 'Math 12',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectThree = factory(App\Subject::class, 1)->create([
@@ -487,7 +446,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Fundamentals of Biology and Earth Science',
             'code' => 'Nat Sci 11',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectFour = factory(App\Subject::class, 1)->create([
@@ -496,7 +454,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Information Technology Essentials',
             'code' => 'Computer 11',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectFive = factory(App\Subject::class, 1)->create([
@@ -505,7 +462,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Food Hygiene, Sanitation and Environmental Concerns',
             'code' => 'Food Hygiene 100 ',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectSix = factory(App\Subject::class, 1)->create([
@@ -514,7 +470,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Culinary Arts and Sciences (Commercial Cooking)',
             'code' => 'CAS 100',
             'units' => 2,
-            'hours' => 4
         ]);
 
         $subjectSeven = factory(App\Subject::class, 1)->create([
@@ -523,7 +478,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Man and Morality',
             'code' => 'Theo 12',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $curriculumSecondSemester = \App\Curriculum::find(18);
@@ -549,7 +503,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'College Algebra 1',
             'code' => 'Math - 11',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectTwo = factory(App\Subject::class, 1)->create([
@@ -558,7 +511,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Fundamentals of Chemistry and Physics',
             'code' => 'Nat Sci 12',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectThree = factory(App\Subject::class, 1)->create([
@@ -567,7 +519,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Introduction to Hotel/Restaurant and Related Institutions Management (Housekeeping)',
             'code' => 'HRM 111',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectFour = factory(App\Subject::class, 1)->create([
@@ -576,7 +527,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Man and Religion',
             'code' => 'Theo 11',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $subjectFive = factory(App\Subject::class, 1)->create([
@@ -585,7 +535,6 @@ class CreateCurriculumForHRMSeeder extends Seeder
             'name' => 'Komunikasyon sa Akademikong Filipino',
             'code' => 'Fil 11',
             'units' => 3,
-            'hours' => 3
         ]);
 
         $curriculumFirstSemester = \App\Curriculum::find(17);

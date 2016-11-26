@@ -22,7 +22,6 @@
                                 <th>Name</th>
                                 <th>Code</th>
                                 <th>Units</th>
-                                <th>Hours</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -33,7 +32,6 @@
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->code }}</td>
                                 <td>{{ $item->units }}</td>
-                                <td>{{ $item->hours }}</td>
                                 <td>
                                     <a
                                         href="{{ url('/admin/subjects/' . $item->id) }}"

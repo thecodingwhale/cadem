@@ -67,14 +67,12 @@
                     <thead>
                         <th>Name</th>
                         <th>Units</th>
-                        <th>Hours</th>
                     </thead>
                     <tbody>
                         @foreach ($subjects as $subject)
                             <tr>
                                 <td>{{ $subject['name'] }}</td>
                                 <td>{{ $subject['units'] }}</td>
-                                <td>{{ $subject['hours'] }}</td>
                             </tr>
                         @endforeach
 

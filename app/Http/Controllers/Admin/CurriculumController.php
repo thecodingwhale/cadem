@@ -86,8 +86,7 @@ class CurriculumController extends AdminController
         foreach ($getSubjects as $subject) {
             $subjects[] = [
                 'name' => $subject->name,
-                'units' => $subject->units,
-                'hours' => $subject->hours
+                'units' => $subject->units
             ];
         }
 

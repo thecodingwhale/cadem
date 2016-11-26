@@ -26,7 +26,7 @@ class Subject extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'code', 'units', 'hours', 'registration_id', 'user_id'
+        'name', 'code', 'units', 'registration_id', 'user_id'
     ];
 
     /**
