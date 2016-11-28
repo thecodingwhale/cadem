@@ -68,12 +68,18 @@
             <table class="table table-borderless">
                 <thead>
                     <th>Course</th>
+                    <th></th>
                 </thead>
                 <tbody>
                     @foreach($courses as $course)
                         <tr>
                             <td>
                                 {{ $course['name'] }}
+                            </td>
+                            <td>
+                                <a href="{{ $course['url_path'] }}" class="btn btn-default btn-xs" title="View Enrollees">
+                                    View
+                                </a>
                             </td>
                         </tr>
                     @endforeach

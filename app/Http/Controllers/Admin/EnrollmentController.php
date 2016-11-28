@@ -6,6 +6,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Admin\AdminController;
 
 use App\Enrollment;
+use App\Curriculum;
+use App\Course;
 use Illuminate\Http\Request;
 use Session;
 
@@ -80,7 +82,8 @@ class EnrollmentController extends AdminController
         $getCourses = $enrollment->courses()->get();
         foreach ($getCourses as $course) {
             $courses[] = [
-                'name' => $course->name
+                'name' => $course->name,
+                'url_path' => url('/admin/enrollment/'. $id .'/course/'. $course->id)
             ];
         }
 
@@ -136,5 +139,29 @@ class EnrollmentController extends AdminController
         Session::flash('flash_status_message', 'Enrollment deleted!');
 
         return redirect('admin/enrollment');
+    }
+
+    public function courses($enrollmentId, $courseId)
+    {
+        $enrollment = Enrollment::findOrFail($enrollmentId);
+        $course = Course::findOrFail($courseId);
+        $curricula = Curriculum::where([
+            ['course_id', $courseId],
+            ['semester', $enrollment->semester]
+        ])->get();
+
+
+        $enrollees = [];
+        $course = [
+            'name' => $course->name,
+            'semester' => $enrollment->semester . ' semester'
+        ];
+        foreach ($curricula as $curriculum) {
+            $enrollees[] = [
+                'year' => $curriculum->year_level
+            ];
+        }
+
+        return view('admin.enrollment.courses', compact('enrollees', 'course'));
     }
 }
