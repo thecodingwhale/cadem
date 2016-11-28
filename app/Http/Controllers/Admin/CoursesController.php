@@ -29,7 +29,6 @@ class CoursesController extends AdminController
     public function index()
     {
         $courses = Course::where('registration_id', $this->registrationId)->paginate(25);
-
         return view('admin.courses.index', compact('courses'));
     }
 

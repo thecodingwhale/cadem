@@ -12,7 +12,7 @@
             </a>
             <a
                 href="{{ url('admin/enrollment/' . $enrollment->id . '/edit') }}"
-                class="btn btn-primary btn-sm"
+                class="btn btn-default btn-sm"
                 title="Edit Enrollment"
             >
                 Edit
@@ -41,6 +41,10 @@
                             <td>{{ $enrollment->id }}</td>
                         </tr>
                         <tr>
+                            <td>Semester</td>
+                            <td>{{ $enrollment->semester }}</td>
+                        </tr>
+                        <tr>
                             <td>School Year From</td>
                             <td>{{ $enrollment->school_year_from->format('Y') }}</td>
                         </tr>
@@ -56,6 +60,25 @@
                 </table>
             </div>
 
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Available Courses</div>
+        <div class="panel-body">
+            <table class="table table-borderless">
+                <thead>
+                    <th>Course</th>
+                </thead>
+                <tbody>
+                    @foreach($courses as $course)
+                        <tr>
+                            <td>
+                                {{ $course['name'] }}
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 @endsection

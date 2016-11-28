@@ -56,3 +56,13 @@ $factory->define(App\Curriculum::class, function (Faker\Generator $faker) {
         'semester' => 1
     ];
 });
+
+
+$factory->define(App\Enrollment::class, function (Faker\Generator $faker) {
+    return [
+        'semester' => 1,
+        'school_year_from' => 2016,
+        'school_year_to' => 2017,
+        'open' => 0
+    ];
+});

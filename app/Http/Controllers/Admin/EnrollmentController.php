@@ -76,7 +76,15 @@ class EnrollmentController extends AdminController
     {
         $enrollment = Enrollment::findOrFail($id);
 
-        return view('admin.enrollment.show', compact('enrollment'));
+        $courses = [];
+        $getCourses = $enrollment->courses()->get();
+        foreach ($getCourses as $course) {
+            $courses[] = [
+                'name' => $course->name
+            ];
+        }
+
+        return view('admin.enrollment.show', compact('enrollment', 'courses'));
     }
 
     /**

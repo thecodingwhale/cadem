@@ -31,7 +31,8 @@ class Enrollment extends Model
         'school_year_to',
         'school_year_from',
         'registration_id',
-        'user_id'
+        'user_id',
+        'semester'
     ];
 
     protected $dates = [
@@ -41,14 +42,23 @@ class Enrollment extends Model
         'school_year_to'
     ];
 
-   public function setSchoolYearFromAttribute($value)
-   {
-       $this->attributes['school_year_from'] = Carbon::createFromFormat('Y', $value);
-   }
+    public function setSchoolYearFromAttribute($value)
+    {
+        $this->attributes['school_year_from'] = Carbon::createFromFormat('Y', $value);
+    }
 
-   public function setSchoolYearToAttribute($value)
-   {
-       $this->attributes['school_year_to'] = Carbon::createFromFormat('Y', $value);
-   }
+    public function setSchoolYearToAttribute($value)
+    {
+        $this->attributes['school_year_to'] = Carbon::createFromFormat('Y', $value);
+    }
+
+    public function courses()
+    {
+        return $this->belongsToMany('App\Course');
+    }
+    public function getAllCourses()
+    {
+        return $this->courses()->get();
+    }
 
 }

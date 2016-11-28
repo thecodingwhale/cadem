@@ -21,6 +21,7 @@ class CreateEnrollmentsTable extends Migration
             $table->boolean('open')->default(false);
             $table->date('school_year_from');
             $table->date('school_year_to');
+            $table->integer('semester')->unsigned();
             $table->timestamps();
         });
     }

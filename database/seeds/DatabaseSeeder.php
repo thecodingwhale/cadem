@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CreateCurriculumCourseSeeder::class);
         $this->call(CreateCurriculumComputerScienceSeeder::class);
         $this->call(CreateCurriculumForHRMSeeder::class);
+        $this->call(CreateSampleEnrollmentWithCoursesSeeder::class);
     }
 }
