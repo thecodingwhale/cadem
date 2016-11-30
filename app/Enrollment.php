@@ -51,4 +51,9 @@ class Enrollment extends Model
         $this->attributes['school_year_to'] = Carbon::createFromFormat('Y', $value);
     }
 
+    public function enrollmentCourses()
+    {
+        return $this->hasMany('App\EnrollmentCourse');
+    }
+
 }

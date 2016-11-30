@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Course;
+use App\Curriculum;
 
 class CreateSampleEnrollmentWithCoursesSeeder extends Seeder
 {
@@ -22,5 +22,19 @@ class CreateSampleEnrollmentWithCoursesSeeder extends Seeder
             'user_id' => $userId,
             'registration_id' => $registrationId
         ]);
+
+        $curricula = Curriculum::where([
+            ['registration_id', $registrationId],
+            ['semester', 1]
+        ])->get();
+
+        foreach ($curricula as $curriculum) {
+            factory(App\EnrollmentCourse::class, 1)->create([
+                'enrollment_id' => $enrollment->id,
+                'course_id' => $curriculum->course_id,
+                'year_level' => $curriculum->year_level
+            ]);
+        }
+
     }
 }

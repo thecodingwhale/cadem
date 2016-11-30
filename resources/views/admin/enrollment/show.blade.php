@@ -52,10 +52,6 @@
                             <td>School Year To</td>
                             <td>{{ $enrollment->school_year_to->format('Y') }}</td>
                         </tr>
-                        <tr>
-                            <td>Open</td>
-                            <td>{{ $enrollment->open }}</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -63,7 +59,7 @@
         </div>
     </div>
     <div class="panel panel-default">
-        <div class="panel-heading">Available Courses</div>
+        <div class="panel-heading">Courses</div>
         <div class="panel-body">
             <table class="table table-borderless">
                 <thead>
@@ -74,7 +70,8 @@
                     @foreach($courses as $course)
                         <tr>
                             <td>
-                                {{ $course['name'] }}
+                                {{ $course['name'] }}<br />
+                                <small>{{ $course['year_level'] }}</small>
                             </td>
                             <td>
                                 <a href="{{ $course['url_path'] }}" class="btn btn-default btn-xs" title="View Enrollees">

@@ -65,3 +65,9 @@ $factory->define(App\Enrollment::class, function (Faker\Generator $faker) {
         'school_year_to' => 2017
     ];
 });
+
+$factory->define(App\EnrollmentCourse::class, function (Faker\Generator $faker) {
+    return [
+
+    ];
+});
