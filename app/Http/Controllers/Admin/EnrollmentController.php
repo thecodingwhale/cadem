@@ -58,8 +58,7 @@ class EnrollmentController extends AdminController
 
         $enrollment = Enrollment::create(array_merge($requestData, [
             'user_id' => $this->userId,
-            'registration_id' => $this->registrationId,
-            'open' => isset($requestData['open'])
+            'registration_id' => $this->registrationId
         ]));
 
         Session::flash('flash_status_message', 'Enrollment added!');

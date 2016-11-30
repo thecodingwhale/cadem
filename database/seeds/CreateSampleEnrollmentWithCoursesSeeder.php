@@ -19,16 +19,8 @@ class CreateSampleEnrollmentWithCoursesSeeder extends Seeder
             'semester' => 1,
             'school_year_from' => 2016,
             'school_year_to' => 2017,
-            'open' => 1,
             'user_id' => $userId,
             'registration_id' => $registrationId
         ]);
-
-        $courses = Course::where('registration_id', $registrationId);
-
-        $enrollment->courses()->attach(
-            $courses->pluck('id')->toArray()
-        );
-
     }
 }

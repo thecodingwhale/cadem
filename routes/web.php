@@ -26,4 +26,3 @@ Route::resource('admin/courses', 'Admin\\CoursesController');
 Route::resource('admin/curriculum', 'Admin\\CurriculumController');
 
 Route::resource('admin/enrollment', 'Admin\\EnrollmentController');
-Route::get('admin/enrollment/{enrollmentId}/course/{courseId}', 'Admin\\EnrollmentController@courses')->name('enrollment.courses');

@@ -27,7 +27,6 @@ class Enrollment extends Model
      * @var array
      */
     protected $fillable = [
-        'open',
         'school_year_to',
         'school_year_from',
         'registration_id',
@@ -50,15 +49,6 @@ class Enrollment extends Model
     public function setSchoolYearToAttribute($value)
     {
         $this->attributes['school_year_to'] = Carbon::createFromFormat('Y', $value);
-    }
-
-    public function courses()
-    {
-        return $this->belongsToMany('App\Course');
-    }
-    public function getAllCourses()
-    {
-        return $this->courses()->get();
     }
 
 }

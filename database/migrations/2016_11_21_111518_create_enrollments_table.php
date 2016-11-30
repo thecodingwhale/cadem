@@ -18,7 +18,6 @@ class CreateEnrollmentsTable extends Migration
             $table->foreign('registration_id')->references('id')->on('registration');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->boolean('open')->default(false);
             $table->date('school_year_from');
             $table->date('school_year_to');
             $table->integer('semester')->unsigned();
