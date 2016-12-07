@@ -71,3 +71,9 @@ $factory->define(App\EnrollmentCourse::class, function (Faker\Generator $faker) 
 
     ];
 });
+
+$factory->define(App\EnrollmentCourseSection::class, function (Faker\Generator $faker) {
+    return [
+
+    ];
+});

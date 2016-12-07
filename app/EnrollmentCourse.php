@@ -33,4 +33,10 @@ class EnrollmentCourse extends Model
     {
         return $this->hasOne('App\Course', 'id', 'course_id');
     }
+
+    public function sections()
+    {
+        return $this->hasMany('App\EnrollmentCourseSection');
+    }
+
 }

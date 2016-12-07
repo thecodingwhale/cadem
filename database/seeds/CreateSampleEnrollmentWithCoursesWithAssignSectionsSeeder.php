@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Curriculum;
 
-class CreateSampleEnrollmentWithCoursesSeeder extends Seeder
+class CreateSampleEnrollmentWithCoursesWithAssignSectionsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -29,12 +29,26 @@ class CreateSampleEnrollmentWithCoursesSeeder extends Seeder
         ])->get();
 
         foreach ($curricula as $curriculum) {
-            factory(App\EnrollmentCourse::class, 1)->create([
+            $enrollmentCourse = factory(App\EnrollmentCourse::class, 1)->create([
                 'enrollment_id' => $enrollment->id,
                 'course_id' => $curriculum->course_id,
                 'year_level' => $curriculum->year_level
             ]);
-        }
 
+            factory(App\EnrollmentCourseSection::class, 1)->create([
+                'enrollment_course_id' => $enrollmentCourse->id,
+                'section' => 'Block A'
+            ]);
+
+            factory(App\EnrollmentCourseSection::class, 1)->create([
+                'enrollment_course_id' => $enrollmentCourse->id,
+                'section' => 'Block B'
+            ]);
+
+            factory(App\EnrollmentCourseSection::class, 1)->create([
+                'enrollment_course_id' => $enrollmentCourse->id,
+                'section' => 'Block C'
+            ]);
+        }
     }
 }

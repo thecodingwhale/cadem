@@ -75,7 +75,7 @@
                             </td>
                             <td>
                                 <a href="{{ $course['url_path'] }}" class="btn btn-default btn-xs" title="View Enrollees">
-                                    View
+                                    View Sections
                                 </a>
                             </td>
                         </tr>
