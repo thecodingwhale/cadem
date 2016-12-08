@@ -79,10 +79,17 @@ class EnrollmentController extends AdminController
 
         $courses = [];
         foreach ($enrollment->enrollmentCourses()->get() as $enrollmentCourse) {
+            $sections = [];
+            $getSections = $enrollmentCourse->sections()->get();
+            foreach ($getSections as $section) {
+                $sections[] = [
+                    'name' => $section->section
+                ];
+            }
             $courses[] = [
                 'name' => $enrollmentCourse->course()->first()->name,
                 'year_level' => $enrollmentCourse->year_level,
-                'url_path' => ''
+                'sections' => $sections
             ];
         }
         return view('admin.enrollment.show', compact('enrollment', 'courses'));

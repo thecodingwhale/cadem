@@ -70,13 +70,18 @@
                     @foreach($courses as $course)
                         <tr>
                             <td>
-                                {{ $course['name'] }}<br />
-                                <small>{{ $course['year_level'] }}</small>
-                            </td>
-                            <td>
-                                <a href="{{ $course['url_path'] }}" class="btn btn-default btn-xs" title="View Enrollees">
-                                    View Sections
-                                </a>
+                                <p>
+                                    {{ $course['name'] }}<br />
+                                    <small>{{ $course['year_level'] }}</small>
+                                </p>
+                                <div>
+                                    Sections
+                                    @foreach($course['sections'] as $section)
+                                        <div>
+                                            {{ $section['name'] }}
+                                        </div>
+                                    @endforeach
+                                </div>
                             </td>
                         </tr>
                     @endforeach
