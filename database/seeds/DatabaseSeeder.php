@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CreateCurriculumComputerScienceSeeder::class);
         $this->call(CreateCurriculumForHRMSeeder::class);
         $this->call(CreateSampleEnrollmentWithCoursesWithAssignSectionsSeeder::class);
+        $this->call(AddStudentPerSectionCourseYearSeeeder::class);
     }
 }
