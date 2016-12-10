@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Enrollment;
 use App\Curriculum;
 use App\Course;
+use App\Student;
 use Illuminate\Http\Request;
 use Session;
 
@@ -82,8 +83,21 @@ class EnrollmentController extends AdminController
             $sections = [];
             $getSections = $enrollmentCourse->sections()->get();
             foreach ($getSections as $section) {
+                $getStudents = Student::where([
+                    ['year_level', $enrollmentCourse->year_level],
+                    ['section_id', $section->id],
+                    ['course_id', $enrollmentCourse->course_id],
+                    ['enrollment_id', $enrollmentCourse->enrollment_id]
+                ])->get();
+                $students = [];
+                foreach ($getStudents as $student) {
+                    $students[] = [
+                        'name' => $student->user->name
+                    ];
+                }
                 $sections[] = [
-                    'name' => $section->section
+                    'name' => $section->section,
+                    'students' => $students
                 ];
             }
             $courses[] = [

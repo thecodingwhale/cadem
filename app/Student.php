@@ -12,6 +12,11 @@ class Student extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id'
+        'user_id', 'year_level', 'course_id', 'section_id', 'enrollment_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'user_id');
+    }
 }

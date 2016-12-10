@@ -77,8 +77,20 @@
                                 <div>
                                     Sections
                                     @foreach($course['sections'] as $section)
-                                        <div>
-                                            {{ $section['name'] }}
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                {{ $section['name'] }}
+                                            </div>
+                                            <div class="col-sm-6">
+                                                Students
+                                                <ul>
+                                                    @foreach($section['students'] as $student)
+                                                        <li>
+                                                            {{ $student['name'] }}
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
                                         </div>
                                     @endforeach
                                 </div>
