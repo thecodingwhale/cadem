@@ -100,10 +100,23 @@ class EnrollmentController extends AdminController
                     'students' => $students
                 ];
             }
+
+            $subjects = [];
+            $getSubjects = Curriculum::where([
+                ['course_id', $enrollmentCourse->course_id],
+                ['year_level', $enrollmentCourse->year_level],
+                ['semester', $enrollment->semester]
+            ])->get()->first()->subjects()->get();
+            foreach ($getSubjects as $subject) {
+                $subjects[] = [
+                    'name' => $subject->name
+                ];
+            }
             $courses[] = [
                 'name' => $enrollmentCourse->course()->first()->name,
                 'year_level' => $enrollmentCourse->year_level,
-                'sections' => $sections
+                'sections' => $sections,
+                'subjects' => $subjects
             ];
         }
         return view('admin.enrollment.show', compact('enrollment', 'courses'));

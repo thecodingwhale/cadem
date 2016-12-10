@@ -74,25 +74,36 @@
                                     {{ $course['name'] }}<br />
                                     <small>{{ $course['year_level'] }}</small>
                                 </p>
-                                <div>
-                                    Sections
-                                    @foreach($course['sections'] as $section)
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                {{ $section['name'] }}
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        Sections
+                                        @foreach($course['sections'] as $section)
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    {{ $section['name'] }}
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    Students
+                                                    <ul>
+                                                        @foreach($section['students'] as $student)
+                                                            <li>
+                                                                {{ $student['name'] }}
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
                                             </div>
-                                            <div class="col-sm-6">
-                                                Students
-                                                <ul>
-                                                    @foreach($section['students'] as $student)
-                                                        <li>
-                                                            {{ $student['name'] }}
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    @endforeach
+                                        @endforeach
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <ul>
+                                            @foreach($course['subjects'] as $subject)
+                                                <li>
+                                                    {{ $subject['name'] }}
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
                                 </div>
                             </td>
                         </tr>
